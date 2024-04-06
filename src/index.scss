@@ -1,6 +1,5 @@
 $prefix: tgbl-;
 
-@import "reset";
 @import "breakpoints";
 @import "colors";
 @import "spacing";
@@ -13,3 +12,5 @@ $prefix: tgbl-;
 @import "transitions";
 @import "sizing";
 @import "transforms";
+
+@import "reset";
