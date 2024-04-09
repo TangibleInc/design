@@ -41,7 +41,7 @@ Possible features to be implemented:
 
 ## Develop
 
-Prerequisites: [Git](https://git-scm.com/) and [Node](https://nodejs.org/en/)
+Prerequisites: [Git](https://git-scm.com/) and [Node](https://nodejs.org/en/) (minimum version 18)
 
 ### Install
 
