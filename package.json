@@ -1,7 +1,7 @@
 {
   "name": "@tangible/design",
   "type": "module",
-  "version": "20240403",
+  "version": "2024.04.09",
   "scripts": {
     "dev": "roll dev",
     "build": "roll build",

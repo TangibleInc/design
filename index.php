@@ -13,7 +13,7 @@ if (!class_exists('tangible\\design')) {
 (include __DIR__ . '/module-loader.php')(new class {
 
   public $name = 'tangible_design';
-  public $version = '20240403';
+  public $version = '20240409';
 
   function load() {
 
