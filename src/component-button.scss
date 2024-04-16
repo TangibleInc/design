@@ -1,0 +1,108 @@
+$button-structure-border-width: 1px;
+$button-structure-border-style: solid;
+$button-structure-padding-inline: 10px;
+$button-structure-padding-block: 4px;
+$button-structure-min-width: max-content;
+$button-structure-width: auto;
+$button-structure-font-size: 14px;
+$button-structure-border-radius: 3px;
+$button-structure-line-height: 1.4;
+$button-structure-outline-size: 2px;
+$button-structure-icon-size: 1.4em;
+
+$button-transition-property: color, border-color, background-color;
+$button-transition-timing-function: ease-in-out;
+$button-transition-duration: 0.2s;
+
+$button-theme-border: $gray-300;
+$button-theme-value: $gray-800;
+$button-theme-background: $white;
+$button-theme-icon: $gray-900;
+
+$button-theme-border-hover: $blue-600;
+$button-theme-value-hover: $gray-800;
+$button-theme-background-hover: $white;
+$button-theme-icon-hover: $blue-600;
+$button-theme-outline-hover: $blue-600;
+
+
+$button-theme-border-focus: $blue-600;
+$button-theme-value-focus: $gray-800;
+$button-theme-background-focus: $white;
+$button-theme-icon-focus: $blue-600;
+$button-theme-outline-focus: $blue-600;
+
+$button-theme-border-focus-visible: $blue-400;
+$button-theme-value-focus-visible: $gray-800;
+$button-theme-background-focus-visible: $white;
+$button-theme-icon-focus-visible: $blue-600;
+$button-theme-outline-focus-visible: $blue-600;
+
+$button-theme-border-disabled: $gray-300;
+$button-theme-value-disabled: $gray-400;
+$button-theme-background-disabled: $gray-50;
+$button-theme-icon-disabled: $gray-400;
+
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+button[type="submit"],
+button[type="button"],
+button[type="reset"] {
+  --#{$prefix}color--button-background: $button-theme-background;
+  --#{$prefix}color--button-background-hovered: $button-theme-background-hover;
+  --#{$prefix}color--button-background-focused: $button-theme-background-focus;
+  --#{$prefix}color--button-background-disabled: $button-theme-background-disabled;
+  --#{$prefix}color--button-text: $button-theme-value;
+  --#{$prefix}color--button-text-hovered: $button-theme-value-hover;
+  --#{$prefix}color--button-text-focused: $button-theme-value-focus;
+  --#{$prefix}color--button-text-disabled: $button-theme-value-disabled;
+  --#{$prefix}color--button-border: $button-theme-border;
+  --#{$prefix}color--button-border-hovered: $button-theme-border-hover;
+  --#{$prefix}color--button-border-focused: $button-theme-border-focus;
+  --#{$prefix}color--button-border-outer-focused: $button-theme-outline-focus;
+  --#{$prefix}color--button-border-disabled: $button-theme-border-disabled;
+  
+  cursor: pointer;
+  background-color: var(--#{$prefix}color--button-background);
+  color: var(--#{$prefix}color--button-text);
+  border-width: $button-structure-border-width;
+  border-style: $button-structure-border-style;
+  border-color: var(--#{$prefix}color--button-border);
+  border-radius: $button-structure-border-radius;
+  text-align: center;
+  font-size: $button-structure-font-size;
+  line-height: $button-structure-line-height;
+  font-weight: bold;
+  display: inline-flex;
+  gap: 0.25em;
+  align-items: center;
+  justify-content: center;
+  padding-inline: $button-structure-padding-inline;
+  padding-block: $button-structure-padding-block;
+  min-width: $button-structure-min-width;
+  width: $button-structure-width;
+  transition-property: $button-transition-property;
+  transition-duration: $button-transition-duration; 
+  transition-timing-function: $button-transition-timing-function;
+
+  &:hover {
+    background-color: var(--#{$prefix}color--button-background-hovered);
+    color: var(--#{$prefix}color--button-text-hovered);
+    border-color: var(--#{$prefix}color--button-border-hovered);
+  }
+  &:focus {
+    background-color: var(--#{$prefix}color--button-background-focused);
+    color: var(--#{$prefix}color--button-text-focused);
+    border-color: var(--#{$prefix}color--button-border-focused);
+    box-shadow: 0 0 0 $button-structure-outline-size #fff, 0 0 0 calc($button-structure-outline-size*2) var(--#{$prefix}color--button-border-outer-focused);
+    outline: 2px solid #0000;
+    outline-offset: 2px;
+  }
+  &[disabled], &.disabled {
+    background-color: var(--#{$prefix}color--button-background-disabled);
+    color: var(--#{$prefix}color--button-text-disabled);
+    border-color: var(--#{$prefix}color--button-border-disabled);
+    cursor: not-allowed;
+  }
+}

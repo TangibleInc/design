@@ -28,7 +28,7 @@ add_action('plugins_loaded', function() {
       
     design\enqueue();
     
-    ?><div class="wrap tgbl-reset"><?php
+    ?><div class="wrap"><?php
     
     include __DIR__ . '/test.html'
 
