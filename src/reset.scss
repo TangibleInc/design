@@ -3,16 +3,6 @@
 .#{$prefix}reset {
 
 /*
-Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
-*/
-
-*,
-::before,
-::after {
-  box-sizing: border-box;
-}
-
-/*
 1. Use a consistent sensible line-height in all browsers.
 2. Prevent adjustments of font size after orientation changes in iOS.
 3. Use a more readable tab size.
@@ -36,6 +26,15 @@ font-variation-settings: normal; /* 6 */
 
 margin: 0; /* 1 */
 line-height: inherit; /* 2 */
+
+/*
+Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+*/
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
 
 /*
 1. Add the correct height in Firefox.
