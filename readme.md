@@ -58,7 +58,7 @@ npm install
 Start the server.
 
 ```sh
-npm run serve
+npm run start
 ```
 
 It opens a browser at `http://localhost:8881` and logs you in automatically. Test user is `admin` with `password`.
@@ -71,7 +71,7 @@ For convenience, this command also starts the development build script described
 
 ### Build for development
 
-Build files, and watch for changes to rebuild
+Build files (CSS/JS), and watch for changes to rebuild
 
 ```sh
 npm run dev

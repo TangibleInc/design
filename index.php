@@ -21,8 +21,9 @@ if (!class_exists('tangible\\design')) {
     design::$state->path = __DIR__;
     design::$state->url = untrailingslashit(plugins_url('/', __FILE__));
 
-    require_once __DIR__ . '/includes/index.php';
-
+    require_once __DIR__ . '/admin/index.php';
+    require_once __DIR__ . '/enqueue.php';
+    
     do_action($this->name . '_ready');
   }
 });
