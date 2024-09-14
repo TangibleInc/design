@@ -1,47 +1,59 @@
-// Config
-@forward "settings";
+/**
+ * Design system based on Bootstrap v5.
+ *
+ * Rewritten to support completely local and modular styles and scripts.
+ * Suitable for use as full site theme, or with plugins, such as UI on the
+ * frontend or admin screen where there is already a global stylesheet.
+ */
 
-// Theming
-@use "themes/default";
+// Configuration - 0K
+@import "functions";
+@import "variables";
+@import "variables-dark";
+@import "maps";
+@import "mixins";
+@import "utilities";
 
-// Layout
-@use "layout/document"; // html
-@use "layout/landmarks"; // body, header, main, footer
-@use "layout/section"; // section
-@use "layout/container"; // .container, .container-fluid
-@use "layout/grid"; // .grid
-@use "layout/overflow-auto"; // .overflow-auto
+// Reboot
 
-// Content
-@use "content/typography"; // headings, p, ul, blockquote, ...
-@use "content/link"; // a, role="link"
-@use "content/button"; // button, role="button", type="button", type="submit" ...
-@use "content/table"; // table, tr, td, ...
-@use "content/embedded"; // audio, canvas, iframe, img, svg, video
-@use "content/code"; // pre, code, ...
-@use "content/figure"; // figure, figcaption
-@use "content/other"; // hr, template, [hidden], dialog, canvas
+@import "root"; // 6K
+@import "reset"; // 5K
 
-// Forms
-@use "forms/basics"; // input, select, textarea, label, fieldset, legend
-@use "forms/checkbox-radio-switch"; // type="checkbox", type="radio", role="switch"
-@use "forms/input-color"; // type="color"
-@use "forms/input-date"; // type="date", type="datetime-local", type="month", type="time", type="week"
-@use "forms/input-file"; // type="file"
-@use "forms/input-range"; // type="range"
-@use "forms/input-search"; // type="search"
+// Layout & components - 142K total
 
-// Components
-@use "components/accordion"; // details, summary
-@use "components/card"; // article
-@use "components/dropdown"; // details.dropdown
-@use "components/group"; // role="group"
-@use "components/loading"; // aria-busy=true
-@use "components/modal"; // dialog
-@use "components/nav"; // nav
-@use "components/progress"; // progress
-@use "components/tooltip"; // data-tooltip
+@import "type";
+@import "images";
+@import "containers"; // 20K
+
+@import "grid";
+@import "tables";
+@import "forms";
+@import "buttons";
+@import "transitions";
+@import "dropdown";
+@import "button-group";
+@import "nav";
+@import "navbar"; // 74K
+
+@import "card";
+@import "accordion";
+@import "breadcrumb";
+@import "pagination";
+@import "badge";
+@import "alert";
+@import "progress";
+@import "list-group";
+@import "close";
+@import "toasts";
+@import "modal";
+@import "tooltip";
+@import "popover";
+@import "carousel";
+@import "spinners";
+@import "offcanvas";
+@import "placeholders"; // 67K
 
 // Utilities
-@use "utilities/accessibility"; // -ms-touch-action, aria-*
-@use "utilities/reduce-motion"; // prefers-reduced-motion
+
+@import "helpers"; // 7K
+@import "utilities/api"; // 66K

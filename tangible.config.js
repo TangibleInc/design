@@ -1,12 +1,16 @@
 export default {
   build: [
     {
-      src: './index.scss',
-      dest: './build/design.min.css',
+      src: 'global.scss',
+      dest: 'build/design.min.css',
     },
     {
-      src: './index.html',
-      dest: './build',
+      src: 'global.ts',
+      dest: 'build/design.min.js',
+    },
+    {
+      src: 'index.html',
+      dest: 'build',
     },
   ],
   serve: {
