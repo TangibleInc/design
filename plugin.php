@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Tangible: Design
  * Description: Design module shared by Tangible plugins
- * Version: 2024.09.08
+ * Version: 2024.09.18
  * GitHub Plugin URI: https://github.com/tangibleinc/design
  */
 use tangible\design;

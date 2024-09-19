@@ -1,65 +1,78 @@
-import BaseComponent, { DATA_PREFIX, DATA_PREFIX_BASE } from './base-component'
-import EventHandler from './dom/event-handler'
-import { defineJQueryPlugin } from './utilities'
+export default function createButton({
+  BaseComponent,
+  CLASS_PREFIX,
+  DATA_PREFIX_BASE,
+  DATA_PREFIX,
+  EventHandler,
+}) {
+  /**
+   * Constants
+   */
 
-/**
- * Constants
- */
+  const NAME = 'button'
+  const DATA_KEY = `${DATA_PREFIX_BASE}.button`
+  const EVENT_KEY = `.${DATA_KEY}`
+  const DATA_API_KEY = '.data-api'
 
-const NAME = 'button'
-const DATA_KEY = `${DATA_PREFIX_BASE}.button`
-const EVENT_KEY = `.${DATA_KEY}`
-const DATA_API_KEY = '.data-api'
+  const CLASS_NAME_ACTIVE = `${CLASS_PREFIX}active`
+  const SELECTOR_DATA_TOGGLE = `[data-${DATA_PREFIX}toggle="button"]`
+  const EVENT_CLICK_DATA_API = `click${EVENT_KEY}${DATA_API_KEY}`
 
-const CLASS_NAME_ACTIVE = 'active'
-const SELECTOR_DATA_TOGGLE = `[data-${DATA_PREFIX}toggle="button"]`
-const EVENT_CLICK_DATA_API = `click${EVENT_KEY}${DATA_API_KEY}`
+  /**
+   * Class definition
+   */
 
-/**
- * Class definition
- */
+  class Button extends BaseComponent {
+    // Getters
+    static get NAME() {
+      return NAME
+    }
 
-class Button extends BaseComponent {
-  // Getters
-  static get NAME() {
-    return NAME
+    // Public
+    toggle() {
+      // Toggle class and sync the `aria-pressed` attribute with the return value of the `.toggle()` method
+      this._element.setAttribute(
+        'aria-pressed',
+        this._element.classList.toggle(CLASS_NAME_ACTIVE),
+      )
+    }
+
+    // Static
+    static jQueryInterface(config) {
+      return this.each(function () {
+        const data = Button.getOrCreateInstance(this)
+
+        if (config === 'toggle') {
+          data[config]()
+        }
+      })
+    }
   }
 
-  // Public
-  toggle() {
-    // Toggle class and sync the `aria-pressed` attribute with the return value of the `.toggle()` method
-    this._element.setAttribute('aria-pressed', this._element.classList.toggle(CLASS_NAME_ACTIVE))
-  }
+  /**
+   * Data API implementation
+   */
 
-  // Static
-  static jQueryInterface(config) {
-    return this.each(function () {
-      const data = Button.getOrCreateInstance(this)
+  EventHandler.on(
+    document,
+    EVENT_CLICK_DATA_API,
+    SELECTOR_DATA_TOGGLE,
+    (event) => {
+      event.preventDefault()
 
-      if (config === 'toggle') {
-        data[config]()
-      }
-    })
-  }
+      const button = event.target.closest(SELECTOR_DATA_TOGGLE)
+      const data = Button.getOrCreateInstance(button)
+
+      data.toggle()
+    },
+  )
+
+  /**
+   * jQuery
+   */
+
+  // defineJQueryPlugin(Button)
+  // export default Button
+
+  return Button
 }
-
-/**
- * Data API implementation
- */
-
-EventHandler.on(document, EVENT_CLICK_DATA_API, SELECTOR_DATA_TOGGLE, event => {
-  event.preventDefault()
-
-  const button = event.target.closest(SELECTOR_DATA_TOGGLE)
-  const data = Button.getOrCreateInstance(button)
-
-  data.toggle()
-})
-
-/**
- * jQuery
- */
-
-// defineJQueryPlugin(Button)
-
-export default Button

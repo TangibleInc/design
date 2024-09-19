@@ -1,21 +1,25 @@
 # Design module
 
-The Design module provides the building blocks for creating design systems. It is a modular, embeddable, customizable library based on a full rewrite of Bootstrap.
+The Design module provides the building blocks for creating design systems.
 
-## Current
+It is a modular, embeddable, customizable library based on a rewrite of Bootstrap v5 to support local styles and scripts. Suitable for use with plugins, such as frontend UI or admin screen where there is already a global stylesheet. It can also be used as a full site styling solution, when loaded with no CSS class prefix.
 
-- [ ] Local styles
+It is a "Sass first" library, meant for importing parts as needed, using variables to customize design tokens and component styles. Prefer to use **Sass variables, mixins, placeholders** whose values appear in the compiled stylesheet only when used - instead of CSS variables and classes which can produce a large amount of unused styles, such as automatically generated utility classes, or all colors and their variations.
+
+## Changes
+
+- [x] Local styles
   - [x] Prefix all CSS variables
   - [x] Prefix all `data-` attributes
-  - [ ] Prefix all classes
-  - [ ] Parent selector for classes
-- [x] Use only `data-` attribute interface for components, instead of jQuery plugins
+  - [x] Prefix all classes
+  - [ ] ~~Parent selector for classes~~
+- [x] Local scripts
+  - [x] Wrap all components
+  - [x] Pass Base module to factory function instead of importing it, so they can be compiled and loaded individually
+  - [x] Pass optional CSS class prefix
+  - [x] Use only `data-` attribute interface for components, instead of jQuery plugins
 - [x] Create Reset module from style reboot
-- [ ] Create Base module for shared styles and script
-- [ ] Wrap all components
-  - [ ] Pass Base module to factory function instead of importing it, so they can be compiled and loaded individually
-  - [ ] Pass optional CSS class prefix
-- [ ] Prefer Sass variables, mixins, placeholders - instead of CSS variables and classes which can produce large amount of unused styles
+- [x] Create Base module for shared styles and script
 
 ## Features
 

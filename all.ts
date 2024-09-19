@@ -14,8 +14,7 @@ import Tab from './tab'
 import Toast from './toast'
 import Tooltip from './tooltip'
 
-const Design = create({
-  classPrefix: '',
+create({
   components: {
     Alert,
     Button,
@@ -31,11 +30,3 @@ const Design = create({
     Tooltip,
   },
 })
-
-declare global {
-  var Tangible: {
-    Design: typeof Design
-  }
-}
-
-(window.Tangible = window.Tangible || {}).Design = Design
