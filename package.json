@@ -4,15 +4,15 @@
   "version": "2024.09.18",
   "scripts": {
     "start": "roll dev",
-    "build": "roll build",
+    "build": "roll build && npm run docs:build",
     "format": "roll format",
-    "version": "node version.js",
-    "wp": "concurrently --raw 'roll dev' 'wp-now start'"
+    "version": "node version.js"
   },
-  "dependencies": { "@popperjs/core": "^2.11.8" },
+  "dependencies": {
+    "@popperjs/core": "^2.11.8"
+  },
   "devDependencies": {
-    "@tangible/roller": "2.x",
-    "@wp-now/wp-now": "^0.1.66",
+    "@tangible/roller": "2",
     "concurrently": "^8.2.2"
   }
 }
