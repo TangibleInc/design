@@ -1,4 +1,4 @@
-import createSwipe from './utilities/swipe'
+import createSwipe from '../utilities/swipe'
 
 export default function createCarousel({
   BaseComponent,

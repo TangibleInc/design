@@ -1,13 +1,11 @@
-import Data from './dom/data'
-import EventHandler from './dom/event-handler'
+import Data from '../dom/data'
+import EventHandler from '../dom/event-handler'
 // import Config from './utilities/config'
-import { executeAfterTransition, getElement } from './utilities'
+import { executeAfterTransition, getElement } from '../utilities'
 
 /**
  * Constants
  */
-
-const VERSION = '2024.09.18' // Fork of Bootstrap 5.3.3
 
 export default function createBaseComponent({
   Config,
@@ -64,10 +62,6 @@ export default function createBaseComponent({
         this.getInstance(element) ||
         new this(element, typeof config === 'object' ? config : null)
       )
-    }
-
-    static get VERSION() {
-      return VERSION
     }
 
     static get DATA_PREFIX() {

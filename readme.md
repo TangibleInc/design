@@ -1,18 +1,23 @@
-# Design module
+# Design
 
-The Design module provides the building blocks for creating design systems.
+The Design library provides the building blocks for creating design systems.
 
-It is a modular, embeddable, customizable library based on a rewrite of Bootstrap v5 to support local styles and scripts. Suitable for use with plugins, such as frontend UI or admin screen where there is already a global stylesheet. It can also be used as a full site styling solution, when loaded with no CSS class prefix.
+It is a modular, embeddable, customizable library based on a rewrite of Bootstrap into local styles and scripts. Its features can be loaded individually without affecting the global CSS styling. Suitable for use with WordPress plugins, such as frontend UI or admin screen, where there is already a global stylesheet. It can also be used as a full site theming solution when built with no CSS class prefix.
 
-It is a "Sass first" library, meant for importing parts as needed, using variables to customize design tokens and component styles. Prefer to use **Sass variables, mixins, placeholders** whose values appear in the compiled stylesheet only when used - instead of CSS variables and classes which can produce a large amount of unused styles, such as automatically generated utility classes, or all colors and their variations.
+It is a "Sass first" library, meant for importing parts as needed, using variables to customize design tokens and component styles. Unlike Bootstrap, which bundles a large amount of unused CSS variables and classes, prefer to use **Sass variables, mixins, placeholders** that are only bundled in the stylesheet when used.
 
 ## Changes
+
+### Document
+
+Develop the library as part of a living [documentation site](https://tangibleinc.github.io/design).
+
+### Modularize
 
 - [x] Local styles
   - [x] Prefix all CSS variables
   - [x] Prefix all `data-` attributes
   - [x] Prefix all classes
-  - [ ] ~~Parent selector for classes~~
 - [x] Local scripts
   - [x] Wrap all components
   - [x] Pass Base module to factory function instead of importing it, so they can be compiled and loaded individually
@@ -20,38 +25,6 @@ It is a "Sass first" library, meant for importing parts as needed, using variabl
   - [x] Use only `data-` attribute interface for components, instead of jQuery plugins
 - [x] Create Reset module from style reboot
 - [x] Create Base module for shared styles and script
-
-## Features
-
-Possible features to be implemented:
-
-- Design tokens
-
-  [Standardized Design Tokens and CSS for a consistent, customizable, and interoperable WordPress future](https://mrwweb.com/standardized-design-tokens-css-wordpress-future/)
-
-  - Base Styles and Reset
-  - Layout
-  - Flexbox & Grid
-  - Spacing
-  - Sizing
-  - Typography
-  - Backgrounds
-  - Borders
-  - Effects
-  - Filters
-  - Tables
-  - Transitions & Animation
-  - Transforms
-  - Interactivity
-
-- Style primitives - Atoms, components, pallettes, themes
-
-- Design system as a set of variables with sensible defaults, which enable the user to customize while keeping the whole consistent
-
-- Accessible UI patterns
-
-  [ARIA Authoring Practices Guide: Patterns](https://www.w3.org/WAI/ARIA/apg/patterns/) and [example code](https://github.com/w3c/aria-practices/tree/main/content/patterns)
-
 
 ## Develop
 

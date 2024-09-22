@@ -1,20 +1,20 @@
-import { create } from './index'
+import * as design from './index'
 
 // These can be imported individually
-import Alert from './alert'
-import Button from './button'
-import Carousel from './carousel'
-import Collapse from './collapse'
-import Dropdown from './dropdown'
-import Modal from './modal'
-import Offcanvas from './offcanvas'
-import Popover from './popover'
-import ScrollSpy from './scrollspy'
-import Tab from './tab'
-import Toast from './toast'
-import Tooltip from './tooltip'
+import Alert from './modules/alert'
+import Button from './modules/button'
+import Carousel from './modules/carousel'
+import Collapse from './modules/collapse'
+import Dropdown from './modules/dropdown'
+import Modal from './modules/modal'
+import Offcanvas from './modules/offcanvas'
+import Popover from './modules/popover'
+import ScrollSpy from './modules/scrollspy'
+import Tab from './modules/tab'
+import Toast from './modules/toast'
+import Tooltip from './modules/tooltip'
 
-const Design = create({
+const Design = design.create({
   classPrefix: '',
   components: {
     Alert,

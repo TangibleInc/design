@@ -1,5 +1,5 @@
 import * as Popper from '@popperjs/core'
-import createBaseComponent from './base'
+import createBaseComponent from './modules/base'
 import EventHandler from './dom/event-handler'
 import createManipulator from './dom/manipulator'
 import createSelectorEngine from './dom/selector-engine'
@@ -167,6 +167,7 @@ export function create({
   })
 
   const ScrollBarHelper = createScrollBarHelper({
+    CLASS_PREFIX,
     Manipulator,
     SelectorEngine,
     isElement,

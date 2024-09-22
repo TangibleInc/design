@@ -14,37 +14,37 @@
 
 // Layout & components - 142K total
 
-@import "type";
-@import "images";
-@import "containers"; // 20K
+@import "modules/type";
+@import "modules/images";
+@import "modules/containers"; // 20K
 
-@import "grid";
-@import "tables";
-@import "forms";
-@import "buttons";
-@import "transitions";
-@import "dropdown";
-@import "button-group";
-@import "nav";
-@import "navbar"; // 74K
+@import "modules/grid";
+@import "modules/tables";
+@import "modules/forms";
+@import "modules/buttons";
+@import "modules/transitions";
+@import "modules/dropdown";
+@import "modules/button-group";
+@import "modules/nav";
+@import "modules/navbar"; // 74K
 
-@import "card";
-@import "accordion";
-@import "breadcrumb";
-@import "pagination";
-@import "badge";
-@import "alert";
-@import "progress";
-@import "list-group";
-@import "close";
-@import "toasts";
-@import "modal";
-@import "tooltip";
-@import "popover";
-@import "carousel";
-@import "spinners";
-@import "offcanvas";
-@import "placeholders"; // 67K
+@import "modules/card";
+@import "modules/accordion";
+@import "modules/breadcrumb";
+@import "modules/pagination";
+@import "modules/badge";
+@import "modules/alert";
+@import "modules/progress";
+@import "modules/list-group";
+@import "modules/close";
+@import "modules/toasts";
+@import "modules/modal";
+@import "modules/tooltip";
+@import "modules/popover";
+@import "modules/carousel";
+@import "modules/spinners";
+@import "modules/offcanvas";
+@import "modules/placeholders"; // 67K
 
 // Utilities
 
