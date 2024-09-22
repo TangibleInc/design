@@ -28,27 +28,27 @@ Develop the library as part of a living [documentation site](https://tangibleinc
 
 ## Develop
 
-Prerequisites: [Git](https://git-scm.com/) and [Node](https://nodejs.org/en/) (minimum version 18)
+Prerequisites: [Git](https://git-scm.com/), [Node](https://nodejs.org/en/) (version 18 and above) or [Bun](https://bun.sh)
 
 ### Install
 
 Clone the Git repository, and install dependencies.
 
 ```sh
-git clone git@github.com:tangibleinc/design tangible-design
-cd tangible-design
+git clone git@github.com:tangibleinc/design
+cd design
 npm install
 ```
 
 ### Develop
 
-Start a minimal static file server.
+Start the Docusaurus script.
 
 ```sh
 npm run start
 ```
 
-It serves the `build` directory at `http://localhost:3535`. It also builds files (CSS/JS), then watches for changes to rebuild and reload the site.
+It serves the `build` directory at http://localhost:3000/design. It also builds files (CSS/JS), then watches for changes to rebuild and reload the site.
 
 Press CTRL + C to stop.
 
@@ -59,29 +59,3 @@ Build and minify files
 ```sh
 npm run build
 ```
-
-### Update version
-
-The following command runs the script `version.js` to update the version number in some files.
-
-```sh
-npm run version
-```
-
-## Local WordPress site for development
-
-For local development, the module can run as a standalone WordPress plugin. In that case, it adds an admin menu *Tangible -&gt; Design*, which currently shows a test page for HTML5 elements.
-
-Start the server.
-
-```sh
-npm run wp
-```
-
-It opens a browser at `http://localhost:8881` and logs you in automatically. Test user is `admin` with `password`.
-
-Press CTRL + C to stop.
-
-This method is the easiest way to serve a local WordPress site without installing anything. It uses [wp-now](https://github.com/WordPress/playground-tools/tree/trunk/packages/wp-now) and [WordPress Playground](https://wordpress.org/playground/). You're free to use any other way to run a local server.
-
-For convenience, this command also starts the development build script described above.
