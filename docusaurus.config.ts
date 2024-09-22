@@ -81,7 +81,9 @@ const config: Config = {
   ],
 
   themeConfig: {
-    defaultMode: 'dark',
+    colorMode: {
+      defaultMode: 'dark'
+    },
     image: 'img/logo.png',
     navbar: {
       title: 'Design',
