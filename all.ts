@@ -1,18 +1,18 @@
 import { create } from './index'
 
 // These can be imported individually
-import Alert from './modules/alert'
-import Button from './modules/button'
-import Carousel from './modules/carousel'
-import Collapse from './modules/collapse'
-import Dropdown from './modules/dropdown'
-import Modal from './modules/modal'
-import Offcanvas from './modules/offcanvas'
-import Popover from './modules/popover'
-import ScrollSpy from './modules/scrollspy'
-import Tab from './modules/tab'
-import Toast from './modules/toast'
-import Tooltip from './modules/tooltip'
+import Alert from './components/alert'
+import Button from './components/button'
+import Carousel from './components/carousel'
+import Collapse from './components/collapse'
+import Dropdown from './components/dropdown'
+import Modal from './components/modal'
+import Offcanvas from './components/offcanvas'
+import Popover from './components/popover'
+import ScrollSpy from './components/scrollspy'
+import Tab from './components/tab'
+import Toast from './components/toast'
+import Tooltip from './components/tooltip'
 
 create({
   components: {

@@ -14,39 +14,39 @@
 
 // Layout & components - 142K total
 
-@import "modules/type";
-@import "modules/images";
-@import "modules/containers"; // 20K
+@import "components/type";
+@import "components/images";
+@import "components/containers"; // 20K
 
-@import "modules/grid";
-@import "modules/tables";
-@import "modules/forms";
-@import "modules/buttons";
-@import "modules/transitions";
-@import "modules/dropdown";
-@import "modules/button-group";
-@import "modules/nav";
-@import "modules/navbar"; // 74K
+@import "components/grid";
+@import "components/tables";
+@import "components/forms";
+@import "components/buttons";
+@import "components/transitions";
+@import "components/dropdown";
+@import "components/button-group";
+@import "components/nav";
+@import "components/navbar"; // 74K
 
-@import "modules/card";
-@import "modules/accordion";
-@import "modules/breadcrumb";
-@import "modules/pagination";
-@import "modules/badge";
-@import "modules/alert";
-@import "modules/progress";
-@import "modules/list-group";
-@import "modules/close";
-@import "modules/toasts";
-@import "modules/modal";
-@import "modules/tooltip";
-@import "modules/popover";
-@import "modules/carousel";
-@import "modules/spinners";
-@import "modules/offcanvas";
-@import "modules/placeholders"; // 67K
+@import "components/card";
+@import "components/accordion";
+@import "components/breadcrumb";
+@import "components/pagination";
+@import "components/badge";
+@import "components/alert";
+@import "components/progress";
+@import "components/list-group";
+@import "components/close";
+@import "components/toasts";
+@import "components/modal";
+@import "components/tooltip";
+@import "components/popover";
+@import "components/carousel";
+@import "components/spinners";
+@import "components/offcanvas";
+@import "components/placeholders"; // 67K
 
-// Utilities
+// Utilities - TODO: Replace with Sass variables, mixins, functions
 
 @import "helpers"; // 7K
 @import "utilities/api"; // 66K

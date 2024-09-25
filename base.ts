@@ -1,7 +1,7 @@
-import Data from '../dom/data'
-import EventHandler from '../dom/event-handler'
+import Data from './dom/data'
+import EventHandler from './dom/event-handler'
 // import Config from './utilities/config'
-import { executeAfterTransition, getElement } from '../utilities'
+import { executeAfterTransition, getElement } from './utilities'
 
 /**
  * Constants

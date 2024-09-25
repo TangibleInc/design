@@ -1,0 +1,41 @@
+@import "../../functions.scss";
+@import "../../variables.scss";
+
+.card {
+  padding: 1rem;
+}
+
+.allColors {
+  @each $colorGroup in (
+    $blues,
+    $indigos,
+    $purples,
+    $pinks,
+    $reds,
+    $oranges,
+    $yellows,
+    $greens,
+    $teals,
+    $cyans,
+    // $grays
+  ) {
+    @each $color, $value in $colorGroup {
+      --#{$prefix}#{$color}: #{$value};
+      // @debug "color #{$color} - value #{$value}";
+    }
+  }
+
+  section {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    &:not(:last-child) {
+      border-bottom: 1px solid $gray-600;
+    }
+  }
+}
+
+.colorList {
+  overflow: hidden;
+  border-radius: .25rem;
+  text-align: center;
+}

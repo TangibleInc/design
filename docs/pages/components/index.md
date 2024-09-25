@@ -1,8 +1,8 @@
 ---
-sidebar_position: 1
+sidebar_position: 3
 ---
 
-# Modules
+# Components
 
 - [Accordion](accordion)
 - [Alerts](alerts)

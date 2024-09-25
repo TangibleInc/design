@@ -1,12 +1,11 @@
 
 // Global or under parent selector
-@if ($parent-selector == "") {
-  html {
-    @extend %reset;
-  }
-}
+// html {
+//   @extend %reset;
+// }
 
-.#{$class-prefix}reset {
+// Use 0 specificity to not compete with root-level classes
+:where(.#{$class-prefix}reset) {
   @extend %reset;
 }
 

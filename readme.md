@@ -1,30 +1,16 @@
 # Design
 
-The Design library provides the building blocks for creating design systems.
+The Design library provides the building blocks for creating design systems. It's a toolbox of consistent design elements and user-interface components.
 
-It is a modular, embeddable, customizable library based on a rewrite of Bootstrap into local styles and scripts. Its features can be loaded individually without affecting the global CSS styling. Suitable for use with WordPress plugins, such as frontend UI or admin screen, where there is already a global stylesheet. It can also be used as a full site theming solution when built with no CSS class prefix.
+It is a modular, embeddable, customizable library with **local styles and scripts**. Features can be loaded individually without affecting the global CSS styling. Suitable for use with WordPress plugins, frontend UI or admin screen, where there is already a global stylesheet. It can also be used as a full site theming solution when built with no CSS class prefix.
 
-It is a "Sass first" library, meant for importing parts as needed, using variables to customize design tokens and component styles. Unlike Bootstrap, which bundles a large amount of unused CSS variables and classes, prefer to use **Sass variables, mixins, placeholders** that are only bundled in the stylesheet when used.
+It is a "Sass first" library, meant for importing parts as needed, using variables to customize the design tokens and component styles. Unlike Bootstrap, which bundles a large amount of unused CSS variables and classes, prefer to use **Sass variables, mixins, placeholders** that only produce any CSS when they're used.
 
-## Changes
+The entire design system can be represented in JSON format for use with JavaScript/TypeScript/React, and potentially visual builders and design tools such as Figma.
 
-### Document
+## Document
 
-Develop the library as part of a living [documentation site](https://tangibleinc.github.io/design).
-
-### Modularize
-
-- [x] Local styles
-  - [x] Prefix all CSS variables
-  - [x] Prefix all `data-` attributes
-  - [x] Prefix all classes
-- [x] Local scripts
-  - [x] Wrap all components
-  - [x] Pass Base module to factory function instead of importing it, so they can be compiled and loaded individually
-  - [x] Pass optional CSS class prefix
-  - [x] Use only `data-` attribute interface for components, instead of jQuery plugins
-- [x] Create Reset module from style reboot
-- [x] Create Base module for shared styles and script
+The library is developed as part of a living [documentation site](https://tangibleinc.github.io/design).
 
 ## Develop
 

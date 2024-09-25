@@ -1,5 +1,5 @@
 import * as Popper from '@popperjs/core'
-import createBaseComponent from './modules/base'
+import createBaseComponent from './base'
 import EventHandler from './dom/event-handler'
 import createManipulator from './dom/manipulator'
 import createSelectorEngine from './dom/selector-engine'
