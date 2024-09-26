@@ -2,15 +2,19 @@
 // Check/radio
 //
 
+$form-check-margin-right: .35rem !default;
+
 .#{$class-prefix}form-check {
-  display: block;
+  display: flex; // block;
   min-height: $form-check-min-height;
   padding-left: $form-check-padding-start;
   margin-bottom: $form-check-margin-bottom;
+  align-items: center;
 
   .#{$class-prefix}form-check-input {
     float: left;
     margin-left: $form-check-padding-start * -1;
+    margin-right: $form-check-margin-right;
   }
 }
 
@@ -51,6 +55,7 @@
   &[type="radio"] {
     // stylelint-disable-next-line property-disallowed-list
     border-radius: $form-check-radio-border-radius;
+    margin-top: 0;
   }
 
   &:active {

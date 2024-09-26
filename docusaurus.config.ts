@@ -39,6 +39,7 @@ const config: Config = {
   presets: [
     [
       'classic',
+      // './docs/preset/index.ts',
       {
         theme: {
           customCss: './docs/style.scss',
@@ -102,11 +103,11 @@ const config: Config = {
 
         // {to: '/blog', label: 'Blog', position: 'left'},
 
-        // {
-        //   href: 'https://github.com/tangibleinc/design',
-        //   label: 'GitHub',
-        //   position: 'right',
-        // },
+        {
+          href: 'https://github.com/tangibleinc/design',
+          label: 'GitHub',
+          position: 'right',
+        },
       ],
     },
     footer: {

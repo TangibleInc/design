@@ -15,6 +15,8 @@ $prefix:                      $variable-prefix !default; // Alias used in origin
  * not supported yet on JS side.
  */
 $data-prefix:                 t- !default;
+// Prefix for data-theme attribute is separate to allow matching Docusarus or site theme
+$data-theme-prefix:           t- !default;
 
 // Parent selector for CSS classes - Must start with ".'
 $parent-selector: "" !default; // ".tgbl-interface"

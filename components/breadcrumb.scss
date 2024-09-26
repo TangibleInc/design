@@ -24,6 +24,7 @@
 .#{$class-prefix}breadcrumb-item {
   // The separator between breadcrumbs (by default, a forward-slash: "/")
   + .#{$class-prefix}breadcrumb-item {
+    margin-top: 0;
     padding-left: var(--#{$prefix}breadcrumb-item-padding-x);
 
     &::before {
@@ -36,5 +37,18 @@
 
   &.#{$class-prefix}active {
     color: var(--#{$prefix}breadcrumb-item-active-color);
+  }
+}
+
+@if $enable-dark-mode {
+
+  $breadcrumb-divider-color-dark: $gray-600 !default;
+
+  @include color-mode(dark) {
+    .#{$class-prefix}breadcrumb-item
+      // The separator between breadcrumbs (by default, a forward-slash: "/")
+      + .#{$class-prefix}breadcrumb-item::before {
+          color: $breadcrumb-divider-color-dark;
+    }
   }
 }
