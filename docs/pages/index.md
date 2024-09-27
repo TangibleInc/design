@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Overview
 
-The Design library provides the building blocks for creating design systems. It's a toolbox of consistent design elements and user-interface components.
+The Design library provides building blocks for creating design systems. It's a toolbox of consistent design elements and user-interface components.
 
 It is a modular, embeddable, customizable library with **local styles and scripts**. Features can be loaded individually without affecting the global CSS styling. Suitable for use with WordPress plugins, frontend UI or admin screen, where there is already a global stylesheet. It can also be used as a full site theming solution when built with no CSS class prefix.
 
@@ -14,7 +14,7 @@ The entire design system can be represented in JSON format for use with JavaScri
 
 ## Atoms
 
-A design system is composed of a set of curated values, called atoms or design tokens.
+A design system is composed of a curated set of values, called atoms or design tokens.
 
 - Background
 - Borders

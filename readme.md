@@ -34,13 +34,11 @@ Start the Docusaurus script.
 npm run start
 ```
 
-It serves the `build` directory at http://localhost:3000/design. It also builds files (CSS/JS), then watches for changes to rebuild and reload the site.
-
-Press CTRL + C to stop.
+It serves the `build` directory at http://localhost:3000/design. It also builds files (CSS/JS), then watches for changes to rebuild and reload the site. Press CTRL + C to stop.
 
 ### Build for production
 
-Build and minify files
+Build and minify files for production.
 
 ```sh
 npm run build

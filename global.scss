@@ -9,4 +9,8 @@ html {
   @extend %reset;
 }
 
+body {
+  @extend %body;
+}
+
 @import "index";

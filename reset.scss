@@ -18,6 +18,11 @@
 
 // scss-docs-start reboot-body-rules
 .#{$class-prefix}reset body, body.#{$class-prefix}reset {
+  @extend %body;
+}
+
+// Mixin to optionally apply to body with no class
+%body {
   margin: 0; // 1
   font-family: var(--#{$prefix}body-font-family);
   @include font-size(var(--#{$prefix}body-font-size));
