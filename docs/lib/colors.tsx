@@ -55,19 +55,19 @@ function getTextColor(bgColor) {
 }
 
 const isBrightBackground = (bgColor) =>
-  getContrast(bgColor, '#ffffff') < getContrast(bgColor, '#000000')
+  getContrast(bgColor, '#ffffff') < getContrast(bgColor, '#555555')
 
 const SassVariable = ({ name, color }) => (
-  <code
+  <div
     style={{
       color: isBrightBackground(color) ? '#000' : '#fff',
-      backgroundColor: 'rgba(255, 255, 255, .2)',
-      padding: '.25rem .5rem',
+      // backgroundColor: 'rgba(255, 255, 255, .2)',
+      padding: '.25rem .25rem',
       border: 'none'
     }}
   >
     {name}
-  </code>
+  </div>
 )
 
 export default function Colors() {
@@ -121,8 +121,13 @@ export default function Colors() {
         <div className={styles.colorList}>
           {Object.keys(state.theme).map((key) => (
             <div
-              className={styles.card}
-              style={{ backgroundColor: state.theme[key] }}
+              className={
+                // `t-badge`
+                styles.card
+              }
+              style={{
+                backgroundColor: state.theme[key]
+              }}
             >
               <SassVariable
                 name={`theme-color-${key}`}
@@ -135,10 +140,15 @@ export default function Colors() {
       {baseColors.map((baseColor) => (
         <section>
           <h2>{baseColor[0].toUpperCase() + baseColor.slice(1)}</h2>
-          <div className={styles.colorList}>
+          <div
+            className={styles.colorList}
+          >
             {grades.map((grade) => (
               <div
-                className={styles.card}
+                className={
+                  // `t-badge`
+                  styles.card
+                }
                 style={{
                   backgroundColor: state.allColors[baseColor]
                     ? state.allColors[baseColor][grade]
@@ -150,7 +160,9 @@ export default function Colors() {
                   color={
                     state.allColors[baseColor]
                       ? state.allColors[baseColor][grade]
-                      : console.log(baseColor, 'has no color') || ''
+                      : ''
+                      // Empty on server-side render
+                      // console.log(baseColor, 'has no color') || 
                   }
                 />
               </div>

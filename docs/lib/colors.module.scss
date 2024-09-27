@@ -2,7 +2,7 @@
 @import "../../variables.scss";
 
 .card {
-  padding: 1rem;
+  padding: .5rem 1rem;
 }
 
 .allColors {
@@ -17,7 +17,7 @@
     $greens,
     $teals,
     $cyans,
-    // $grays
+    // $grays // Already exists
   ) {
     @each $color, $value in $colorGroup {
       --#{$prefix}#{$color}: #{$value};
@@ -28,14 +28,14 @@
   section {
     margin-bottom: 1rem;
     padding-bottom: 1rem;
-    &:not(:last-child) {
-      border-bottom: 1px solid $gray-600;
-    }
+    // &:not(:last-child) {
+    //   border-bottom: 1px solid $gray-600;
+    // }
   }
 }
 
 .colorList {
   overflow: hidden;
-  border-radius: .25rem;
-  text-align: center;
+  border-radius: .5rem;
+  text-align: left;
 }
