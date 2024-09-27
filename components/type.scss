@@ -39,8 +39,8 @@
 }
 
 .#{$class-prefix}lead {
-  @include font-size($lead-font-size);
   font-weight: $lead-font-weight;
+  @include font-size($lead-font-size);
 }
 
 // Type display classes

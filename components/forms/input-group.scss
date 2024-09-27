@@ -70,8 +70,8 @@
 .#{$class-prefix}input-group-lg > .#{$class-prefix}input-group-text,
 .#{$class-prefix}input-group-lg > .#{$class-prefix}btn {
   padding: $input-padding-y-lg $input-padding-x-lg;
-  @include font-size($input-font-size-lg);
   @include border-radius($input-border-radius-lg);
+  @include font-size($input-font-size-lg);
 }
 
 .#{$class-prefix}input-group-sm > .#{$class-prefix}form-control,

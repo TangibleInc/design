@@ -162,8 +162,8 @@
 .#{$class-prefix}form-control-lg {
   min-height: $input-height-lg;
   padding: $input-padding-y-lg $input-padding-x-lg;
-  @include font-size($input-font-size-lg);
   @include border-radius($input-border-radius-lg);
+  @include font-size($input-font-size-lg);
 
   &::file-selector-button {
     padding: $input-padding-y-lg $input-padding-x-lg;
