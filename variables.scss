@@ -825,7 +825,7 @@ $input-btn-border-width:      var(--#{$prefix}border-width) !default;
 
 // Buttons
 //
-// For each of Bootstrap's buttons, define text, background, and border color.
+// For each set of buttons, define text, background, and border color.
 
 // scss-docs-start btn-variables
 $btn-color:                   var(--#{$prefix}body-color) !default;
@@ -1427,7 +1427,7 @@ $tooltip-margin:                    null !default; // TODO: remove this in v6
 $tooltip-arrow-width:               .8rem !default;
 $tooltip-arrow-height:              .4rem !default;
 // fusv-disable
-$tooltip-arrow-color:               null !default; // Deprecated in Bootstrap 5.2.0 for CSS variables
+$tooltip-arrow-color:               null !default; // Deprecated in v5.2.0 for CSS variables
 // fusv-enable
 // scss-docs-end tooltip-variables
 

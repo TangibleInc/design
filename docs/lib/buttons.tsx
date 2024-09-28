@@ -2,7 +2,10 @@ export default function ButtonsExample({
   prefix = 't-' // or ''
 }) {
   return (
-    <>
+    <div style={{
+      display: 'flex',
+      gap: '.5rem',
+    }}>
       <button type='button' className={`${prefix}btn ${prefix}btn-primary`}>
         Primary
       </button>
@@ -31,6 +34,6 @@ export default function ButtonsExample({
       <button type='button' className={`${prefix}btn ${prefix}btn-link`}>
         Link
       </button>
-    </>
+    </div>
   )
 }

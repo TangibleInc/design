@@ -2,7 +2,10 @@ export default function BadgesExample({
   prefix = 't-' // or ''
 }) {
   return (
-    <>
+    <div style={{
+      display: 'flex',
+      gap: '.25rem',
+    }}>
       <span className={`${prefix}badge ${prefix}text-bg-primary`}>Primary</span>
       <span className={`${prefix}badge ${prefix}text-bg-secondary`}>Secondary</span>
       <span className={`${prefix}badge ${prefix}text-bg-success`}>Success</span>
@@ -11,6 +14,6 @@ export default function BadgesExample({
       <span className={`${prefix}badge ${prefix}text-bg-info`}>Info</span>
       <span className={`${prefix}badge ${prefix}text-bg-light`}>Light</span>
       <span className={`${prefix}badge ${prefix}text-bg-dark`}>Dark</span>
-    </>
+    </div>
   )
 }

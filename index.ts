@@ -1,4 +1,3 @@
-import * as Popper from '@popperjs/core'
 import createBaseComponent from './base'
 import EventHandler from './dom/event-handler'
 import createManipulator from './dom/manipulator'
@@ -29,20 +28,6 @@ import { DefaultAllowlist, sanitizeHtml } from './utilities/sanitizer'
 import createTemplateFactory from './utilities/template-factory'
 import createScrollBarHelper from './utilities/scrollbar'
 
-// Import individually
-// import Alert from './alert'
-// import Button from './button'
-// import Carousel from './carousel'
-// import Collapse from './collapse'
-// import Dropdown from './dropdown'
-// import Modal from './modal'
-// import Offcanvas from './offcanvas'
-// import Popover from './popover'
-// import ScrollSpy from './scrollspy'
-// import Tab from './tab'
-// import Toast from './toast'
-// import Tooltip from './tooltip'
-
 const base = {
   // BaseComponent,
   // Config, // Support prefix
@@ -68,7 +53,7 @@ const base = {
   // TODO: Support loading these separately?
   // Backdrop,
   // FocusTrap,
-  Popper,
+  // Popper,
   DefaultAllowlist,
   sanitizeHtml,
   // TemplateFactory,
@@ -87,14 +72,16 @@ export type ComponentCreator = (
     enableDismissTrigger: any
     FocusTrap: any
     Manipulator: any
+    Popper: any
     ScrollBarHelper: any
     SelectorEngine: any
     TemplateFactory: any
     Tooltip?: any
 
+    // Other components
     [key: string]: any
   } & typeof base,
-) => Function
+) => Function | Object
 
 /**
  * Create component by providing shared utilities and config such as
@@ -115,6 +102,7 @@ export function create({
 }) {
   const Manipulator = createManipulator({
     DATA_PREFIX,
+    DATA_PREFIX_BASE,
   })
 
   const Config = createConfig({
@@ -174,41 +162,51 @@ export function create({
   })
   
   const enableDismissTrigger = createEnableDismissTrigger({
+    CLASS_PREFIX,
     DATA_PREFIX,
     EventHandler,
     SelectorEngine,
     isDisabled,
   })
 
-  const boots = {}
+  const design = {
+    ...base,
+    Backdrop,
+    BaseComponent,
+    CLASS_PREFIX,
+    Config,
+    DATA_PREFIX_BASE,
+    DATA_PREFIX,
+    enableDismissTrigger,
+    FocusTrap,
+    Manipulator,
+    ScrollBarHelper,
+    SelectorEngine,
+    TemplateFactory,
+    Popper: null,
+    addComponent(name: string, creator: ComponentCreator) {
+      design[name] = design[name] || creator(design)
+    }
+  }
+
+  if (components.Popper) {
+    design.addComponent('Popper', components.Popper)
+  }
 
   // Load components that extend other components at the end
-  const later: string[] = ['Popover']
+  const loadLater: string[] = ['Popover']
   const entries = [
-    ...Object.entries(components).filter(([name]) => !later.includes(name)),
-    ...later.map<[key: string, (props: any) => Function]>((key) => [
+    ...Object.entries(components).filter(([name]) => !loadLater.includes(name)),
+    ...loadLater
+    .filter(name => Boolean(components[name]))
+    .map<[key: string, ComponentCreator]>((key) => [
       key,
       components[key],
     ]),
   ]
 
   for (const [name, creator] of entries) {
-    boots[name] = creator({
-      ...base,
-      ...boots,
-      Backdrop,
-      BaseComponent,
-      CLASS_PREFIX,
-      Config,
-      DATA_PREFIX_BASE,
-      DATA_PREFIX,
-      enableDismissTrigger,
-      FocusTrap,
-      Manipulator,
-      ScrollBarHelper,
-      SelectorEngine,
-      TemplateFactory,
-    })
+    design.addComponent(name, creator)
   }
 
   // onDOMContentLoaded
@@ -216,5 +214,5 @@ export function create({
   // Array.from(document.querySelectorAll('.t-dropdown'))
   //     .forEach(toastNode => new Toast(toastNode))
 
-  return boots
+  return design
 }

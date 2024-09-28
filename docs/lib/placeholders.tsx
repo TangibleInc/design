@@ -4,7 +4,11 @@ export default function Example({
   prefix = 't-', // or ''
 }) {
   return (
-    <>
+    <div style={{
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '2rem',
+    }}>
       <div className={`${prefix}card`}>
         <img
           src={placeholderImage300x150}
@@ -47,6 +51,6 @@ export default function Example({
           ></a>
         </div>
       </div>
-    </>
+    </div>
   )
 }

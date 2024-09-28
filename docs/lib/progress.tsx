@@ -2,8 +2,12 @@ export default function Example({
   prefix = 't-', // or ''
 }) {
   return (
-    <>
-      <p>
+    <div style={{
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '1.5rem',
+    }}>
+
         <div
           className={`${prefix}progress`}
           role='progressbar'
@@ -17,8 +21,8 @@ export default function Example({
             style={{ width: '0%' }}
           ></div>
         </div>
-      </p>
-      <p>
+
+
         <div
           className={`${prefix}progress`}
           role='progressbar'
@@ -32,8 +36,8 @@ export default function Example({
             style={{ width: '25%' }}
           ></div>
         </div>
-      </p>
-      <p>
+
+
         <div
           className={`${prefix}progress`}
           role='progressbar'
@@ -47,8 +51,8 @@ export default function Example({
             style={{ width: '50%' }}
           ></div>
         </div>
-      </p>
-      <p>
+
+
         <div
           className={`${prefix}progress`}
           role='progressbar'
@@ -62,8 +66,8 @@ export default function Example({
             style={{ width: '75%' }}
           ></div>
         </div>
-      </p>
-      <p>
+
+
         <div
           className={`${prefix}progress`}
           role='progressbar'
@@ -77,7 +81,6 @@ export default function Example({
             style={{ width: '100%' }}
           ></div>
         </div>
-      </p>{' '}
-    </>
+    </div>
   )
 }

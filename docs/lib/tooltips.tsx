@@ -1,8 +1,30 @@
+import { useEffect, useRef } from 'react'
+import design from '@site/all' // Listens to events on data-t attributes
+
 export default function Example({
-  prefix = 't-' // or ''
+  prefix = 't-', // or ''
+  dataPrefix = 't-',
 }) {
+  // TODO: Move this logic to new React component Popover
+  const ref = useRef()
+  useEffect(() => {
+    const el: HTMLElement = ref.current
+    if (!el) return
+    for (const target of [
+      ...el.querySelectorAll(`[data-${dataPrefix}toggle]`),
+    ]) {
+      new design.Tooltip(target)
+    }
+  }, [])
+
   return (
-    <>
+    <div
+      ref={ref}
+      style={{
+        display: 'flex',
+        gap: '.5rem',
+      }}
+    >
       <button
         type='button'
         className={`${prefix}btn ${prefix}btn-secondary`}
@@ -39,6 +61,6 @@ export default function Example({
       >
         Tooltip on left
       </button>
-    </>
+    </div>
   )
 }

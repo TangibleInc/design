@@ -65,7 +65,11 @@ export default function createModal({
 
   class Modal extends BaseComponent {
     constructor(element, config) {
+      console.log('ELEMENT', element)
       super(element, config)
+      if (!element) {
+        return
+      }
 
       this._dialog = SelectorEngine.findOne(SELECTOR_DIALOG, this._element)
       this._backdrop = this._initializeBackDrop()
@@ -360,6 +364,11 @@ export default function createModal({
     SELECTOR_DATA_TOGGLE,
     function (event) {
       const target = SelectorEngine.getElementFromSelector(this)
+
+      if (!target) {
+        console.warn('No target found for component', NAME)
+        return
+      }
 
       if (['A', 'AREA'].includes(this.tagName)) {
         event.preventDefault()

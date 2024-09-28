@@ -1,10 +1,10 @@
 # Design
 
-The Design library provides the building blocks for creating design systems. It's a toolbox of consistent design elements and user-interface components.
+The Design library provides building blocks for creating design systems. It's a toolbox of consistent design elements and user-interface components.
 
 It is a modular, embeddable, customizable library with **local styles and scripts**. Features can be loaded individually without affecting the global CSS styling. Suitable for use with WordPress plugins, frontend UI or admin screen, where there is already a global stylesheet. It can also be used as a full site theming solution when built with no CSS class prefix.
 
-It is a "Sass first" library, meant for importing parts as needed, using variables to customize the design tokens and component styles. Unlike Bootstrap, which bundles a large amount of unused CSS variables and classes, prefer to use **Sass variables, mixins, placeholders** that only produce any CSS when they're used.
+It is a "Sass first" library, meant for importing parts as needed, using variables to customize the design tokens and component styles. Instead of bundling a large amount of unused CSS variables and classes, prefer to use **Sass variables, mixins, placeholders** that only produce any CSS when they're used.
 
 The entire design system can be represented in JSON format for use with JavaScript/TypeScript/React, and potentially visual builders and design tools such as Figma.
 

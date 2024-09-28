@@ -1,3 +1,5 @@
+import '@site/all' // Listens to events on data-t attributes
+
 export default function AccordionExample({
   prefix = 't-' // or ''
 }) {

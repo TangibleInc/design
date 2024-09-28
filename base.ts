@@ -22,6 +22,8 @@ export default function createBaseComponent({
 
       element = getElement(element)
       if (!element) {
+        console.warn('No element found for component', this.NAME)
+        console.trace()
         return
       }
 

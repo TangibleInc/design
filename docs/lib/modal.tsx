@@ -1,3 +1,5 @@
+import '@site/all' // Listens to events on data-t attributes
+
 export default function Example({
   prefix = 't-', // or ''
 }) {
@@ -6,12 +8,13 @@ export default function Example({
       <button
         type='button'
         className={`${prefix}btn ${prefix}btn-primary`}
-        data-bs-toggle='modal'
+        data-t-toggle='modal'
         data-t-target='#exampleModal'
       >
         Launch demo modal
       </button>
       <div
+        id='exampleModal'
         className={`${prefix}modal ${prefix}fade`}
         tabIndex={-1}
         aria-labelledby='exampleModalLabel'
@@ -29,16 +32,18 @@ export default function Example({
               <button
                 type='button'
                 className={`${prefix}btn-close`}
-                data-bs-dismiss='modal'
+                data-t-dismiss='modal'
                 aria-label='Close'
               ></button>
             </div>
-            <div className={`${prefix}modal-body`}>...</div>
+            <div className={`${prefix}modal-body`}>
+              Description of modal content
+            </div>
             <div className={`${prefix}modal-footer`}>
               <button
                 type='button'
                 className={`${prefix}btn ${prefix}btn-secondary`}
-                data-bs-dismiss='modal'
+                data-t-dismiss='modal'
               >
                 Close
               </button>

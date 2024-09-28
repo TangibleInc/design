@@ -87,7 +87,6 @@ export default function createDropdown({
   class Dropdown extends BaseComponent {
     constructor(element, config) {
       super(element, config)
-
       this._popper = null
       this._parent = this._element.parentNode // dropdown wrapper
       // TODO: v6 revert #37011 & change markup https://getbootstrap.com/docs/5.3/forms/input-group/
@@ -433,6 +432,8 @@ export default function createDropdown({
     }
 
     static dataApiKeydownHandler(event) {
+      console.log('dropdown instance', event)
+
       // If not an UP | DOWN | ESCAPE key => not a dropdown command
       // If input/textarea && if key is other than ESCAPE => not a dropdown command
 
@@ -461,7 +462,6 @@ export default function createDropdown({
           )
 
       const instance = Dropdown.getOrCreateInstance(getToggleButton)
-
       if (isUpOrDownEvent) {
         event.stopPropagation()
         instance.show()

@@ -31,7 +31,7 @@ function normalizeDataKey(key) {
   return key.replace(/[A-Z]/g, (chr) => `-${chr.toLowerCase()}`)
 }
 
-export default function createManipulator({ DATA_PREFIX }) {
+export default function createManipulator({ DATA_PREFIX, DATA_PREFIX_BASE }) {
   const Manipulator = {
     setDataAttribute(element, key, value) {
       element.setAttribute(`data-${DATA_PREFIX}${normalizeDataKey(key)}`, value)
@@ -47,12 +47,15 @@ export default function createManipulator({ DATA_PREFIX }) {
       }
 
       const attributes = {}
-      const bsKeys = Object.keys(element.dataset).filter(
-        (key) => key.startsWith('bs') && !key.startsWith('bsConfig'),
+
+      const configKeys = Object.keys(element.dataset).filter(
+        (key) => key.startsWith(DATA_PREFIX_BASE) && !key.startsWith(`${DATA_PREFIX_BASE}Config`),
       )
 
-      for (const key of bsKeys) {
-        let pureKey = key.replace(/^bs/, '')
+      for (const key of configKeys) {
+        let pureKey = key
+          // .replace(/^bs/, '')
+          .slice(DATA_PREFIX_BASE.length)
         pureKey = pureKey.charAt(0).toLowerCase() + pureKey.slice(1)
         attributes[pureKey] = normalizeData(element.dataset[key])
       }

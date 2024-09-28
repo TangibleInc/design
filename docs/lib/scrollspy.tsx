@@ -1,3 +1,7 @@
+import design from '@site/all' // Listens to events on data-t attributes
+
+design // Ensure it gets bundled
+
 export default function Example({
   prefix = 't-', // or ''
 }) {

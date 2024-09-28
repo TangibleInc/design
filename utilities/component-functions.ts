@@ -1,5 +1,6 @@
 
 export function createEnableDismissTrigger({
+  CLASS_PREFIX,
   DATA_PREFIX,
   EventHandler,
   SelectorEngine,
@@ -24,8 +25,12 @@ export function createEnableDismissTrigger({
 
         const target =
           SelectorEngine.getElementFromSelector(this) ||
-          this.closest(`.${name}`)
+          this.closest(`.${CLASS_PREFIX}${name}`)
         const instance = component.getOrCreateInstance(target)
+
+        if (!instance) {
+          console.warn('No instance found for component', target)
+        }
 
         // Method argument is left, for Alert and only, as it doesn't implement the 'hide' method
         instance[method]()

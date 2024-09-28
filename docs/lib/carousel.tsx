@@ -1,3 +1,7 @@
+import '@site/all' // Listens to events on data-t attributes
+import { placeholderImage300x150 } from '@site/utilities/placeholder'
+
+
 export default function Example({
   prefix = 't-' // or ''
 }) {
@@ -28,29 +32,29 @@ export default function Example({
         </div>
         <div className={`${prefix}carousel-inner`}>
           <div className={`${prefix}carousel-item ${prefix}active`}>
-            <img src='...' className={`${prefix}d-block ${prefix}w-100`} alt='...' />
+            <img src={placeholderImage300x150} className={`${prefix}d-block ${prefix}w-100`} alt='...' />
             <div className={`${prefix}carousel-caption ${prefix}d-none ${prefix}d-md-block`}>
               <h5>First slide label</h5>
               <p>
-                Some representative placeholder content for the first slide.
+                Placeholder content for the first slide.
               </p>
             </div>
           </div>
           <div className={`${prefix}carousel-item`}>
-            <img src='...' className={`${prefix}d-block ${prefix}w-100`} alt='...' />
+            <img src={placeholderImage300x150} className={`${prefix}d-block ${prefix}w-100`} alt='...' />
             <div className={`${prefix}carousel-caption ${prefix}d-none ${prefix}d-md-block`}>
               <h5>Second slide label</h5>
               <p>
-                Some representative placeholder content for the second slide.
+                Placeholder content for the second slide.
               </p>
             </div>
           </div>
           <div className={`${prefix}carousel-item`}>
-            <img src='...' className={`${prefix}d-block ${prefix}w-100`} alt='...' />
+            <img src={placeholderImage300x150} className={`${prefix}d-block ${prefix}w-100`} alt='...' />
             <div className={`${prefix}carousel-caption ${prefix}d-none ${prefix}d-md-block`}>
               <h5>Third slide label</h5>
               <p>
-                Some representative placeholder content for the third slide.
+                Placeholder content for the third slide.
               </p>
             </div>
           </div>

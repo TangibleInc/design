@@ -193,7 +193,7 @@ export default function createTooltip({
       if (this._element.style.display === 'none') {
         throw new Error('Please use show on visible elements')
       }
-
+console.log('show tooltip', this._config, this._isWithContent() , this._isEnabled)
       if (!(this._isWithContent() && this._isEnabled)) {
         return
       }

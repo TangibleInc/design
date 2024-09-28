@@ -2,7 +2,10 @@ export default function Example({
   prefix = 't-', // or ''
 }) {
   return (
-    <>
+    <div style={{
+      display: 'flex',
+      gap: '1.5rem',
+    }}>
       <div
         className={`${prefix}spinner-border ${prefix}text-primary`}
         role='status'
@@ -51,6 +54,6 @@ export default function Example({
       >
         <span className={`${prefix}visually-hidden`}>Loading...</span>
       </div>
-    </>
+    </div>
   )
 }

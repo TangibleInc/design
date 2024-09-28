@@ -1,3 +1,4 @@
+import '@site/all'
 import { placeholderImage300x150 } from '@site/utilities/placeholder'
 
 export default function Example({

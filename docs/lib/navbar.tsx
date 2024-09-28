@@ -1,3 +1,5 @@
+import '@site/all' // Listens to events on data-t attributes
+
 export default function Example({
   prefix = 't-', // or ''
 }) {

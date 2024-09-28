@@ -1,8 +1,14 @@
+import '@site/all' // Listens to events on data-t attributes
+
 export default function Example({
   prefix = 't-' // or ''
 }) {
   return (
     <>
+    <div style={{
+      display: 'flex',
+      gap: '.5rem',
+    }}>
       <a
         className={`${prefix}btn ${prefix}btn-primary`}
         data-t-toggle='offcanvas'
@@ -21,6 +27,7 @@ export default function Example({
       >
         Button with data-t-target
       </button>
+    </div>
 
       <div
         className={`${prefix}offcanvas ${prefix}offcanvas-start`}
