@@ -33,7 +33,7 @@ export default function createCollapse({
   const WIDTH = 'width'
   const HEIGHT = 'height'
 
-  const SELECTOR_ACTIVES = `'.${CLASS_PREFIX}collapse.${CLASS_PREFIX}show, .${CLASS_PREFIX}collapse.${CLASS_PREFIX}collapsing`
+  const SELECTOR_ACTIVES = `.${CLASS_PREFIX}collapse.${CLASS_PREFIX}show, .${CLASS_PREFIX}collapse.${CLASS_PREFIX}collapsing`
   const SELECTOR_DATA_TOGGLE = `[data-${DATA_PREFIX}toggle="collapse"]`
 
   const Default = {
