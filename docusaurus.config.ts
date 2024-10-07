@@ -10,7 +10,7 @@ const config: Config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://tangibleinc.github.io',
+  url: 'https://design.tangible.one',
 
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
@@ -83,7 +83,7 @@ const config: Config = {
 
   themeConfig: {
     colorMode: {
-      defaultMode: 'dark'
+      defaultMode: 'light', // 'dark'
     },
     image: 'img/logo.png',
     navbar: {
