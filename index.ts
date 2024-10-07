@@ -88,9 +88,8 @@ export type ComponentCreator = (
  * prefix for HTML data attributes.
  */
 export function create({
+  classPrefix: CLASS_PREFIX = 't-', // Or '' for no prefix
   dataPrefix: DATA_PREFIX = 't-',
-  dataPrefixBase: DATA_PREFIX_BASE = 't',
-  classPrefix: CLASS_PREFIX = 't-', // Or '' for global with no prefix
   components = {},
 }: {
   dataPrefix?: string
@@ -100,6 +99,9 @@ export function create({
     [name: string]: ComponentCreator
   }
 }) {
+
+  const DATA_PREFIX_BASE = DATA_PREFIX.slice(0, -1)
+
   const Manipulator = createManipulator({
     DATA_PREFIX,
     DATA_PREFIX_BASE,

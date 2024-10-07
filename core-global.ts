@@ -1,8 +1,9 @@
 import { create } from './index'
 
 const design = create({
-  // data- attributes are still prefixed
   classPrefix: '',
+  // data- attributes are still prefixed
+  dataPrefix: 't-',
   components: {},
 })
 
