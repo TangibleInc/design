@@ -84,3 +84,10 @@ $data-theme-prefix: '';
     --ifm-footer-background-color: #242526; // #303846
   }
 }
+
+// Give content more width when no sidebar
+@media (min-width: 997px) {
+  #__docusaurus .docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module {
+    max-width: 100% !important;
+  }
+}
