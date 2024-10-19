@@ -8,7 +8,7 @@ export default function Example({
 
 <main className={`${prefix}form-signin ${prefix}w-100 ${prefix}m-auto`}>
   <form>
-    <img className={`${prefix}mb-4`} src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"/>
+    <img className={`${prefix}mb-4`} src="/img/logo.svg" alt="" width="72" height="57"/>
     <h1 className={`${prefix}h3 ${prefix}mb-3 ${prefix}fw-normal`}>Please sign in</h1>
 
     <div className={`${prefix}form-floating`}>

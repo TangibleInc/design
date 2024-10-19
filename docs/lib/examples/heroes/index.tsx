@@ -10,7 +10,7 @@ export default function Example({
   <h1 className={`${prefix}visually-hidden`}>Heroes examples</h1>
 
   <div className={`${prefix}px-4 ${prefix}py-5 ${prefix}my-5 ${prefix}text-center`}>
-    <img className={`${prefix}d-block ${prefix}mx-auto ${prefix}mb-4`} src="../assets/profile.png" alt="" width="72" height="57"/>
+    <img className={`${prefix}d-block ${prefix}mx-auto ${prefix}mb-4`} src="/img/profile.png" alt="" width="72" height="57"/>
     <h1 className={`${prefix}display-5 ${prefix}fw-bold ${prefix}text-body-emphasis`}>Centered hero</h1>
     <div className={`${prefix}col-lg-6 ${prefix}mx-auto`}>
       <p className={`${prefix}lead ${prefix}mb-4`}>Quickly design and customize responsive mobile-first sites, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>

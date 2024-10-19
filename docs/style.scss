@@ -85,6 +85,10 @@ $data-theme-prefix: '';
   }
 }
 
+.container > h1 {
+  margin-top: 1rem;
+}
+
 // Give content more width when no sidebar
 @media (min-width: 997px) {
   #__docusaurus .docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module {

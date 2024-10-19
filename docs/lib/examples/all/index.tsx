@@ -3269,7 +3269,7 @@ export function Navbar({ prefix = 't-' }) {
               <div className={`${prefix}container-fluid`}>
                 <a className={`${prefix}navbar-brand`} href='#'>
                   <img
-                    src='../assets/brand/bootstrap-logo-white.svg'
+                    src='/img/logo.svg'
                     width='38'
                     height='30'
                     className={`${prefix}d-inline-block ${prefix}align-top`}
@@ -3376,7 +3376,7 @@ export function Navbar({ prefix = 't-' }) {
               <div className={`${prefix}container-fluid`}>
                 <a className={`${prefix}navbar-brand`} href='#'>
                   <img
-                    src='../assets/brand/bootstrap-logo-white.svg'
+                    src='/img/logo.svg'
                     width='38'
                     height='30'
                     className={`${prefix}d-inline-block ${prefix}align-top`}

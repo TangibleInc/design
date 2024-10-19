@@ -1,4 +1,6 @@
 import React from 'react'
+// import './dashboard.css'
+
 export default function Example({
   prefix = 't-' // or ''
 }) {

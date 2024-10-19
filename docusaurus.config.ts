@@ -2,9 +2,11 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
+const title = 'Design Library'
+
 // https://docusaurus.io/docs/next/api/themes/configuration
 const config: Config = {
-  title: 'Design Library',
+  title,
   tagline: 'Building blocks for design systems',
 
   favicon: 'img/favicon.ico',
@@ -87,7 +89,7 @@ const config: Config = {
     },
     image: 'img/logo.png',
     navbar: {
-      title: 'Design',
+      title,
       logo: {
         alt: 'Logo',
         src: 'img/logo.svg',

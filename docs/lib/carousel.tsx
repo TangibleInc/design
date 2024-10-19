@@ -1,7 +1,6 @@
 import '@site/all' // Listens to events on data-t attributes
 import { placeholderImage300x150 } from '@site/utilities/placeholder'
 
-
 export default function Example({
   prefix = 't-' // or ''
 }) {

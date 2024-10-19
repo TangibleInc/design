@@ -384,7 +384,7 @@ export default function Example({
                   aria-expanded='false'
                 >
                   <img
-                    src='../assets/profile.png'
+                    src='/img/profile.png'
                     alt='mdo'
                     width='32'
                     height='32'
@@ -508,7 +508,7 @@ export default function Example({
                   aria-expanded='false'
                 >
                   <img
-                    src='../assets/profile.png'
+                    src='/img/profile.png'
                     alt='mdo'
                     width='32'
                     height='32'

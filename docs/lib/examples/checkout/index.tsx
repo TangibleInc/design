@@ -1,4 +1,6 @@
 import React from 'react'
+import { placeholderImage300x150 } from '@site/utilities/placeholder'
+
 export default function Example({
   prefix = 't-' // or ''
 }) {
@@ -11,7 +13,7 @@ export default function Example({
 <div className={`${prefix}container`}>
   <main>
     <div className={`${prefix}py-5 ${prefix}text-center`}>
-      <img className={`${prefix}d-block ${prefix}mx-auto ${prefix}mb-4`} src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"/>
+    <img src={placeholderImage300x150} className={`${prefix}d-block ${prefix}w-100`} alt='...' />
       <h2>Checkout form</h2>
       <p className={`${prefix}lead`}>Below is an example form built entirely with form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
     </div>

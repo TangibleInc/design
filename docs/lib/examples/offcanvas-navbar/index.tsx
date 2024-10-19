@@ -63,7 +63,7 @@ export default function Example({
 
 <main className={`${prefix}container`}>
   <div className={`${prefix}d-flex ${prefix}align-items-center ${prefix}p-3 ${prefix}my-3 ${prefix}text-white ${prefix}bg-purple ${prefix}rounded ${prefix}shadow-sm`}>
-    <img className={`${prefix}me-3`} src="../assets/brand/bootstrap-logo-white.svg" alt="" width="48" height="38"/>
+    <img className={`${prefix}me-3`} src="/img/logo.svg" alt="" width="48" height="38"/>
     <div className={`${prefix}lh-1`}>
       <h1 className={`${prefix}h6 ${prefix}mb-0 ${prefix}text-white ${prefix}lh-1`}>Example</h1>
       <small>Since 2011</small>

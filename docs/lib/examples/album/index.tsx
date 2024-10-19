@@ -5,7 +5,7 @@ export default function Example({
   return (
     <>
 
-<header data-bs-theme="dark">
+<header data-theme="dark">
   <div className={`${prefix}collapse ${prefix}text-bg-dark`} id="navbarHeader">
     <div className={`${prefix}container`}>
       <div className={`${prefix}row`}>

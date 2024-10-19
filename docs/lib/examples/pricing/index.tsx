@@ -334,7 +334,7 @@ export default function Example({
             <div className={`${prefix}col-12 ${prefix}col-md`}>
               <img
                 className={`${prefix}mb-2`}
-                src='../assets/brand/bootstrap-logo.svg'
+                src='/img/logo.svg'
                 alt=''
                 width='24'
                 height='19'

@@ -1,11 +1,14 @@
 import React from 'react'
+import '@site/all' // Listens to events on data-t attributes
+import { placeholderImage300x150 } from '@site/utilities/placeholder'
+
 export default function Example({
   prefix = 't-' // or ''
 }) {
   return (
     <>
 {/* <link href="carousel.css" rel="stylesheet"> */}
-
+{/* 
 <header data-t-theme="dark">
   <nav className={`${prefix}navbar ${prefix}navbar-expand-md ${prefix}navbar-dark ${prefix}fixed-top ${prefix}bg-dark`}>
     <div className={`${prefix}container-fluid`}>
@@ -32,7 +35,7 @@ export default function Example({
       </div>
     </div>
   </nav>
-</header>
+</header> */}
 
 <main>
 
@@ -44,7 +47,7 @@ export default function Example({
     </div>
     <div className={`${prefix}carousel-inner`}>
       <div className={`${prefix}carousel-item ${prefix}active`}>
-        <svg className={`${prefix}bd-placeholder-img`} width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+        <img src={placeholderImage300x150} className={`${prefix}d-block ${prefix}w-100`} alt='...' />
         <div className={`${prefix}container`}>
           <div className={`${prefix}carousel-caption ${prefix}text-start`}>
             <h1>Example headline.</h1>
@@ -54,7 +57,7 @@ export default function Example({
         </div>
       </div>
       <div className={`${prefix}carousel-item`}>
-        <svg className={`${prefix}bd-placeholder-img`} width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+        <img src={placeholderImage300x150} className={`${prefix}d-block ${prefix}w-100`} alt='...' />
         <div className={`${prefix}container`}>
           <div className={`${prefix}carousel-caption`}>
             <h1>Another example headline.</h1>
@@ -64,7 +67,7 @@ export default function Example({
         </div>
       </div>
       <div className={`${prefix}carousel-item`}>
-        <svg className={`${prefix}bd-placeholder-img`} width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+        <img src={placeholderImage300x150} className={`${prefix}d-block ${prefix}w-100`} alt='...' />
         <div className={`${prefix}container`}>
           <div className={`${prefix}carousel-caption ${prefix}text-end`}>
             <h1>One more for good measure.</h1>

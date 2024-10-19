@@ -123,44 +123,6 @@ export default function Example({
       </nav>
 
       <main>
-        <div
-          className={`${prefix}position-relative ${prefix}overflow-hidden ${prefix}p-3 ${prefix}p-md-5 ${prefix}m-md-3 ${prefix}text-center ${prefix}bg-body-tertiary`}
-        >
-          <div
-            className={`${prefix}col-md-6 ${prefix}p-lg-5 ${prefix}mx-auto ${prefix}my-5`}
-          >
-            <h1 className={`${prefix}display-3 ${prefix}fw-bold`}>
-              Designed for engineers
-            </h1>
-            <h3
-              className={`${prefix}fw-normal ${prefix}text-muted ${prefix}mb-3`}
-            >
-              Build anything you want with Aperture
-            </h3>
-            <div
-              className={`${prefix}d-flex ${prefix}gap-3 ${prefix}justify-content-center ${prefix}lead ${prefix}fw-normal`}
-            >
-              <a className={`${prefix}icon-link`} href='#'>
-                Learn more
-                <svg className={`${prefix}bi`}>
-                  <use xlinkHref='#chevron-right' />
-                </svg>
-              </a>
-              <a className={`${prefix}icon-link`} href='#'>
-                Buy
-                <svg className={`${prefix}bi`}>
-                  <use xlinkHref='#chevron-right' />
-                </svg>
-              </a>
-            </div>
-          </div>
-          <div
-            className={`${prefix}product-device ${prefix}shadow-sm ${prefix}d-none ${prefix}d-md-block`}
-          ></div>
-          <div
-            className={`${prefix}product-device ${prefix}product-device-2 ${prefix}shadow-sm ${prefix}d-none ${prefix}d-md-block`}
-          ></div>
-        </div>
 
         <div
           className={`${prefix}d-md-flex ${prefix}flex-md-equal ${prefix}w-100 ${prefix}my-md-3 ${prefix}ps-md-3`}
