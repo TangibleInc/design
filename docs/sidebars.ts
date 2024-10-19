@@ -20,13 +20,13 @@ const sidebars: SidebarsConfig = {
     // 'all/index',
     'atoms',
     'colors',
-    [
-      {
-        type: 'link',
-        href: '/sandbox',
-        label: 'Sandbox',
-      },
-    ],
+    // [
+    //   {
+    //     type: 'link',
+    //     href: '/sandbox',
+    //     label: 'Sandbox',
+    //   },
+    // ],
     {
       type: 'category',
       label: 'Components',
