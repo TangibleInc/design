@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { program as cli } from 'commander';
-import { transform } from './utils/transform.js';
+import { transform } from './transform.js';
 
 cli.description('Process spec-conforming design tokens JSON');
 cli.name('designTokens');

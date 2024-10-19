@@ -1,8 +1,8 @@
-import jetpack from 'fs-jetpack';
-import { findDuplicates } from "./findDuplicates.js";
-import { findTrueValues } from "./findTrueValues.js";
+// import jetpack from 'fs-jetpack';
+import { findDuplicates } from "../findDuplicates.js";
+import { findTrueValues } from "../findTrueValues.js";
 import { flattenJSON } from './flattenJSON.js';
-import { chooseTransform } from './chooseTransform.js';
+import { chooseTransform } from '../chooseTransform.js';
 
 const transform = (configPath, options) => {
   // If no config path argument, look for config file
