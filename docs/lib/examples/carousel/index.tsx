@@ -6,11 +6,11 @@ export default function Example({
     <>
 {/* <link href="carousel.css" rel="stylesheet"> */}
 
-<header data-bs-theme="dark">
+<header data-t-theme="dark">
   <nav className={`${prefix}navbar ${prefix}navbar-expand-md ${prefix}navbar-dark ${prefix}fixed-top ${prefix}bg-dark`}>
     <div className={`${prefix}container-fluid`}>
       <a className={`${prefix}navbar-brand`} href="#">Carousel</a>
-      <button className={`${prefix}navbar-toggler`} type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <button className={`${prefix}navbar-toggler`} type="button" data-t-toggle="collapse" data-t-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span className={`${prefix}navbar-toggler-icon`}></span>
       </button>
       <div className={`${prefix}collapse ${prefix}navbar-collapse`} id="navbarCollapse">
@@ -36,11 +36,11 @@ export default function Example({
 
 <main>
 
-  <div id="myCarousel" className={`${prefix}carousel ${prefix}slide ${prefix}mb-6`} data-bs-ride="carousel">
+  <div id="myCarousel" className={`${prefix}carousel ${prefix}slide ${prefix}mb-6`} data-t-ride="carousel">
     <div className={`${prefix}carousel-indicators`}>
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" className={`${prefix}active`} aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-t-target="#myCarousel" data-t-slide-to="0" className={`${prefix}active`} aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-t-target="#myCarousel" data-t-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-t-target="#myCarousel" data-t-slide-to="2" aria-label="Slide 3"></button>
     </div>
     <div className={`${prefix}carousel-inner`}>
       <div className={`${prefix}carousel-item ${prefix}active`}>
@@ -74,11 +74,11 @@ export default function Example({
         </div>
       </div>
     </div>
-    <button className={`${prefix}carousel-control-prev`} type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+    <button className={`${prefix}carousel-control-prev`} type="button" data-t-target="#myCarousel" data-t-slide="prev">
       <span className={`${prefix}carousel-control-prev-icon`} aria-hidden="true"></span>
       <span className={`${prefix}visually-hidden`}>Previous</span>
     </button>
-    <button className={`${prefix}carousel-control-next`} type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+    <button className={`${prefix}carousel-control-next`} type="button" data-t-target="#myCarousel" data-t-slide="next">
       <span className={`${prefix}carousel-control-next-icon`} aria-hidden="true"></span>
       <span className={`${prefix}visually-hidden`}>Next</span>
     </button>

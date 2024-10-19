@@ -17,6 +17,7 @@ const sidebars: SidebarsConfig = {
   // Or create a sidebar manually
   mainSidebar: [
     'index',
+    // 'all/index',
     'atoms',
     'colors',
     {

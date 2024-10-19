@@ -53,14 +53,14 @@ export default function Example({
 </svg>
 
 <div className={`${prefix}d-flex ${prefix}flex-column ${prefix}flex-md-row ${prefix}p-4 ${prefix}gap-4 ${prefix}py-md-5 ${prefix}align-items-center ${prefix}justify-content-center`}>
-  <ul className={`${prefix}dropdown-menu ${prefix}position-static ${prefix}d-grid ${prefix}gap-1 ${prefix}p-2 ${prefix}rounded-3 ${prefix}mx-0 ${prefix}shadow ${prefix}w-220px`} data-bs-theme="light">
+  <ul className={`${prefix}dropdown-menu ${prefix}position-static ${prefix}d-grid ${prefix}gap-1 ${prefix}p-2 ${prefix}rounded-3 ${prefix}mx-0 ${prefix}shadow ${prefix}w-220px`} data-theme="light">
     <li><a className={`${prefix}dropdown-item ${prefix}rounded-2 ${prefix}active`} href="#">Action</a></li>
     <li><a className={`${prefix}dropdown-item ${prefix}rounded-2`} href="#">Another action</a></li>
     <li><a className={`${prefix}dropdown-item ${prefix}rounded-2`} href="#">Something else here</a></li>
     <li><hr className={`${prefix}dropdown-divider`}/></li>
     <li><a className={`${prefix}dropdown-item ${prefix}rounded-2`} href="#">Separated link</a></li>
   </ul>
-  <ul className={`${prefix}dropdown-menu ${prefix}position-static ${prefix}d-grid ${prefix}gap-1 ${prefix}p-2 ${prefix}rounded-3 ${prefix}mx-0 ${prefix}border-0 ${prefix}shadow ${prefix}w-220px`} data-bs-theme="dark">
+  <ul className={`${prefix}dropdown-menu ${prefix}position-static ${prefix}d-grid ${prefix}gap-1 ${prefix}p-2 ${prefix}rounded-3 ${prefix}mx-0 ${prefix}border-0 ${prefix}shadow ${prefix}w-220px`} data-theme="dark">
     <li><a className={`${prefix}dropdown-item ${prefix}rounded-2 ${prefix}active`} href="#">Action</a></li>
     <li><a className={`${prefix}dropdown-item ${prefix}rounded-2`} href="#">Another action</a></li>
     <li><a className={`${prefix}dropdown-item ${prefix}rounded-2`} href="#">Something else here</a></li>
@@ -72,9 +72,9 @@ export default function Example({
 <div className={`${prefix}b-example-divider`}></div>
 
 <div className={`${prefix}d-flex ${prefix}flex-column ${prefix}flex-md-row ${prefix}p-4 ${prefix}gap-4 ${prefix}py-md-5 ${prefix}align-items-center ${prefix}justify-content-center`}>
-  <div className={`${prefix}dropdown-menu ${prefix}d-block ${prefix}position-static ${prefix}pt-0 ${prefix}mx-0 ${prefix}rounded-3 ${prefix}shadow ${prefix}overflow-hidden ${prefix}w-280px`} data-bs-theme="light">
+  <div className={`${prefix}dropdown-menu ${prefix}d-block ${prefix}position-static ${prefix}pt-0 ${prefix}mx-0 ${prefix}rounded-3 ${prefix}shadow ${prefix}overflow-hidden ${prefix}w-280px`} data-theme="light">
     <form className={`${prefix}p-2 ${prefix}mb-2 ${prefix}bg-body-tertiary ${prefix}border-bottom`}>
-      <input type="search" className={`${prefix}form-control`} autocomplete="false" placeholder="Type to filter..."/>
+      <input type="search" className={`${prefix}form-control`} autoComplete="false" placeholder="Type to filter..."/>
     </form>
     <ul className={`${prefix}list-unstyled ${prefix}mb-0`}>
       <li><a className={`${prefix}dropdown-item ${prefix}d-flex ${prefix}align-items-center ${prefix}gap-2 ${prefix}py-2`} href="#">
@@ -96,9 +96,9 @@ export default function Example({
     </ul>
   </div>
 
-  <div className={`${prefix}dropdown-menu ${prefix}d-block ${prefix}position-static ${prefix}border-0 ${prefix}pt-0 ${prefix}mx-0 ${prefix}rounded-3 ${prefix}shadow ${prefix}overflow-hidden ${prefix}w-280px`} data-bs-theme="dark">
+  <div className={`${prefix}dropdown-menu ${prefix}d-block ${prefix}position-static ${prefix}border-0 ${prefix}pt-0 ${prefix}mx-0 ${prefix}rounded-3 ${prefix}shadow ${prefix}overflow-hidden ${prefix}w-280px`} data-theme="dark">
     <form className={`${prefix}p-2 ${prefix}mb-2 ${prefix}bg-dark ${prefix}border-bottom ${prefix}border-dark`}>
-      <input type="search" className={`${prefix}form-control ${prefix}bg-dark`} autocomplete="false" placeholder="Type to filter..."/>
+      <input type="search" className={`${prefix}form-control ${prefix}bg-dark`} autoComplete="false" placeholder="Type to filter..."/>
     </form>
     <ul className={`${prefix}list-unstyled ${prefix}mb-0`}>
       <li><a className={`${prefix}dropdown-item ${prefix}d-flex ${prefix}align-items-center ${prefix}gap-2 ${prefix}py-2`} href="#">
@@ -124,7 +124,7 @@ export default function Example({
 <div className={`${prefix}b-example-divider`}></div>
 
 <div className={`${prefix}d-flex ${prefix}flex-column ${prefix}flex-md-row ${prefix}p-4 ${prefix}gap-4 ${prefix}py-md-5 ${prefix}align-items-center ${prefix}justify-content-center`}>
-  <ul className={`${prefix}dropdown-menu ${prefix}d-block ${prefix}position-static ${prefix}mx-0 ${prefix}shadow ${prefix}w-220px`} data-bs-theme="light">
+  <ul className={`${prefix}dropdown-menu ${prefix}d-block ${prefix}position-static ${prefix}mx-0 ${prefix}shadow ${prefix}w-220px`} data-theme="light">
     <li>
       <a className={`${prefix}dropdown-item ${prefix}d-flex ${prefix}gap-2 ${prefix}align-items-center`} href="#">
         <svg className={`${prefix}bi`} width="16" height="16"><use xlinkHref="#files"/></svg>
@@ -163,7 +163,7 @@ export default function Example({
       </a>
     </li>
   </ul>
-  <ul className={`${prefix}dropdown-menu ${prefix}d-block ${prefix}position-static ${prefix}mx-0 ${prefix}border-0 ${prefix}shadow ${prefix}w-220px`} data-bs-theme="dark">
+  <ul className={`${prefix}dropdown-menu ${prefix}d-block ${prefix}position-static ${prefix}mx-0 ${prefix}border-0 ${prefix}shadow ${prefix}w-220px`} data-theme="dark">
     <li>
       <a className={`${prefix}dropdown-item ${prefix}d-flex ${prefix}gap-2 ${prefix}align-items-center`} href="#">
         <svg className={`${prefix}bi`} width="16" height="16"><use xlinkHref="#files"/></svg>
@@ -207,7 +207,7 @@ export default function Example({
 <div className={`${prefix}b-example-divider`}></div>
 
 <div className={`${prefix}d-flex ${prefix}flex-column ${prefix}flex-md-row ${prefix}p-4 ${prefix}gap-4 ${prefix}py-md-5 ${prefix}align-items-center ${prefix}justify-content-center`}>
-  <div className={`${prefix}dropdown-menu ${prefix}d-block ${prefix}position-static ${prefix}p-2 ${prefix}mx-0 ${prefix}shadow ${prefix}rounded-3 ${prefix}w-340px`} data-bs-theme="light">
+  <div className={`${prefix}dropdown-menu ${prefix}d-block ${prefix}position-static ${prefix}p-2 ${prefix}mx-0 ${prefix}shadow ${prefix}rounded-3 ${prefix}w-340px`} data-theme="light">
     <div className={`${prefix}d-grid ${prefix}gap-1`}>
       <div className={`${prefix}cal`}>
         <div className={`${prefix}cal-month`}>
@@ -286,7 +286,7 @@ export default function Example({
     </div>
   </div>
 
-  <div className={`${prefix}dropdown-menu ${prefix}d-block ${prefix}position-static ${prefix}p-2 ${prefix}mx-0 ${prefix}shadow ${prefix}rounded-3 ${prefix}w-340px`} data-bs-theme="dark">
+  <div className={`${prefix}dropdown-menu ${prefix}d-block ${prefix}position-static ${prefix}p-2 ${prefix}mx-0 ${prefix}shadow ${prefix}rounded-3 ${prefix}w-340px`} data-theme="dark">
     <div className={`${prefix}d-grid ${prefix}gap-1`}>
       <div className={`${prefix}cal`}>
         <div className={`${prefix}cal-month`}>
@@ -369,7 +369,7 @@ export default function Example({
 <div className={`${prefix}b-example-divider`}></div>
 
 <div className={`${prefix}d-flex ${prefix}flex-column ${prefix}flex-md-row ${prefix}p-4 ${prefix}gap-4 ${prefix}py-md-5 ${prefix}align-items-center ${prefix}justify-content-center`}>
-  <div className={`${prefix}dropdown-menu ${prefix}position-static ${prefix}d-flex ${prefix}flex-column ${prefix}flex-lg-row ${prefix}align-items-stretch ${prefix}justify-content-start ${prefix}p-3 ${prefix}rounded-3 ${prefix}shadow-lg`} data-bs-theme="light">
+  <div className={`${prefix}dropdown-menu ${prefix}position-static ${prefix}d-flex ${prefix}flex-column ${prefix}flex-lg-row ${prefix}align-items-stretch ${prefix}justify-content-start ${prefix}p-3 ${prefix}rounded-3 ${prefix}shadow-lg`} data-theme="light">
     <nav className={`${prefix}col-lg-8`}>
       <ul className={`${prefix}list-unstyled ${prefix}d-flex ${prefix}flex-column ${prefix}gap-2`}>
         <li>
@@ -416,7 +416,7 @@ export default function Example({
     </div>
   </div>
 
-  <div className={`${prefix}dropdown-menu ${prefix}position-static ${prefix}d-flex ${prefix}flex-column ${prefix}flex-lg-row ${prefix}align-items-stretch ${prefix}justify-content-start ${prefix}p-3 ${prefix}rounded-3 ${prefix}shadow-lg`} data-bs-theme="dark">
+  <div className={`${prefix}dropdown-menu ${prefix}position-static ${prefix}d-flex ${prefix}flex-column ${prefix}flex-lg-row ${prefix}align-items-stretch ${prefix}justify-content-start ${prefix}p-3 ${prefix}rounded-3 ${prefix}shadow-lg`} data-theme="dark">
     <nav className={`${prefix}col-lg-8`}>
       <ul className={`${prefix}list-unstyled ${prefix}d-flex ${prefix}flex-column ${prefix}gap-2`}>
         <li>

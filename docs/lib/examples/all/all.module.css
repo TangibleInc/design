@@ -1,5 +1,14 @@
-body {
+/* body {
   scroll-behavior: smooth;
+} */
+
+.bd-all {
+  /* Sticky header offset for page anchors  */
+  a[name] {
+    padding-top: 4rem;
+    margin-top: -4rem;
+    display: inline-block; /* required for webkit browsers */
+  }
 }
 
 /**
@@ -92,12 +101,12 @@ body {
 
 /* Layout */
 @media (min-width: 1200px) {
-  body {
+  /* body {
     display: grid;
     grid-template-rows: auto;
     grid-template-columns: 1fr 4fr 1fr;
     gap: 1rem;
-  }
+  } */
 
   .bd-header {
     position: fixed;

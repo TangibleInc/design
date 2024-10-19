@@ -4,7 +4,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 // https://docusaurus.io/docs/next/api/themes/configuration
 const config: Config = {
-  title: 'Design',
+  title: 'Design Library',
   tagline: 'Building blocks for design systems',
 
   favicon: 'img/favicon.ico',
