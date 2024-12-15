@@ -1,5 +1,9 @@
 @use 'sass:color';
+@use 'sass:list';
+@use 'sass:map';
 @use 'sass:math';
+@use 'sass:meta';
+@use 'sass:string';
 
 // Utility mixins and functions for evaluating source code across variables, maps, and mixins.
 
@@ -9,9 +13,9 @@
   $prev-key: null;
   $prev-num: null;
   @each $key, $num in $map {
-    @if $prev-num == null or unit($num) == '%' or unit($prev-num) == '%' {
+    @if $prev-num == null or math.unit($num) == '%' or math.unit($prev-num) == '%' {
       // Do nothing
-    } @else if not comparable($prev-num, $num) {
+    } @else if not math.compatible($prev-num, $num) {
       @warn "Potentially invalid value for #{$map-name}: This map must be in ascending order, but key '#{$key}' has value #{$num} whose unit makes it incomparable to #{$prev-num}, the value of the previous key '#{$prev-key}' !";
     } @else if $prev-num >= $num {
       @warn "Invalid value for #{$map-name}: This map must be in ascending order, but key '#{$key}' has value #{$num} which isn't greater than #{$prev-num}, the value of the previous key '#{$prev-key}' !";
@@ -24,9 +28,9 @@
 // Starts at zero
 // Used to ensure the min-width of the lowest breakpoint starts at 0.
 @mixin _assert-starts-at-zero($map, $map-name: '$grid-breakpoints') {
-  @if length($map) > 0 {
-    $values: map-values($map);
-    $first-value: nth($values, 1);
+  @if list.length($map) > 0 {
+    $values: map.values($map);
+    $first-value: list.nth($values, 1);
     @if $first-value != 0 {
       @warn "First breakpoint in #{$map-name} must start at 0, but starts at #{$first-value}.";
     }
@@ -35,10 +39,10 @@
 
 // Colors
 @function to-rgb($color) {
-  @return red($color), green($color), blue($color);
-  // @return color.channel($color, 'red', $space: rgb),
-  //   color.channel($color, 'green', $space: rgb),
-  //   color.channel($color, 'blue', $space: rgb);
+  // @return red($color), green($color), blue($color);
+  @return color.channel($color, 'red', $space: rgb),
+    color.channel($color, 'green', $space: rgb),
+    color.channel($color, 'blue', $space: rgb);
 }
 
 // stylelint-disable scss/dollar-variable-pattern
@@ -69,16 +73,16 @@
     // allow to pass the $key and $value of the map as an function argument
     $_args: ();
     @each $arg in $args {
-      $_args: append(
+      $_args: list.append(
         $_args,
         if($arg == '$key', $key, if($arg == '$value', $value, $arg))
       );
     }
 
-    $_map: map-merge(
+    $_map: map.merge(
       $_map,
       (
-        $key: call(get-function($func), $_args...),
+        $key: meta.call(meta.get-function($func), $_args...),
       )
     );
   }
@@ -90,7 +94,7 @@
 @function varify($list) {
   $result: null;
   @each $entry in $list {
-    $result: append($result, var(--#{$prefix}#{$entry}), space);
+    $result: list.append($result, var(--#{$prefix}#{$entry}), space);
   }
   @return $result;
 }
@@ -101,7 +105,7 @@
   $result: ();
   @each $key, $value in $map {
     @if $key != 0 {
-      $result: map-merge($result, ('n' + $key: (-$value)));
+      $result: map.merge($result, ('n' + $key: (-$value)));
     }
   }
   @return $result;
@@ -111,8 +115,8 @@
 @function map-get-multiple($map, $values) {
   $result: ();
   @each $key, $value in $map {
-    @if (index($values, $key) != null) {
-      $result: map-merge(
+    @if (list.index($values, $key) != null) {
+      $result: map.merge(
         $result,
         (
           $key: $value,
@@ -128,7 +132,7 @@
   $merged-maps: ();
 
   @each $map in $maps {
-    $merged-maps: map-merge($merged-maps, $map);
+    $merged-maps: map.merge($merged-maps, $map);
   }
   @return $merged-maps;
 }
@@ -142,12 +146,12 @@
 // @param {String} $replace ('') - New value
 // @return {String} - Updated string
 @function str-replace($string, $search, $replace: '') {
-  $index: str-index($string, $search);
+  $index: string.index($string, $search);
 
   @if $index {
-    @return str-slice($string, 1, $index - 1) + $replace +
+    @return string.slice($string, 1, $index - 1) + $replace +
       str-replace(
-        str-slice($string, $index + str-length($search)),
+        string.slice($string, $index + string.length($search)),
         $search,
         $replace
       );
@@ -161,11 +165,11 @@
 // Requires the use of quotes around data URIs.
 
 @function escape-svg($string) {
-  @if str-index($string, 'data:image/svg+xml') {
+  @if string.index($string, 'data:image/svg+xml') {
     @each $char, $encoded in $escaped-characters {
       // Do not escape the url brackets
-      @if str-index($string, 'url(') == 1 {
-        $string: url('#{str-replace(str-slice($string, 6, -3), $char, $encoded)}');
+      @if string.index($string, 'url(') == 1 {
+        $string: url('#{str-replace(string.slice($string, 6, -3), $char, $encoded)}');
       } @else {
         $string: str-replace($string, $char, $encoded);
       }
@@ -246,25 +250,28 @@ $_luminance-list: 0.0008 0.001 0.0011 0.0013 0.0015 0.0017 0.002 0.0022 0.0025
 // See https://www.w3.org/TR/WCAG/#dfn-contrast-ratio
 @function luminance($color) {
   $rgb: (
-    'r': red($color),
-    // color.channel($color, "red", $space: rgb),
-    'g': green($color),
-    // color.channel($color, "green", $space: rgb),
-    'b': blue($color),
-    // color.channel($color, "blue", $space: rgb),
+    'r':
+    // red($color),
+    color.channel($color, "red", $space: rgb),
+    'g':
+    // green($color),
+    color.channel($color, "green", $space: rgb),
+    'b':
+    // blue($color),
+    color.channel($color, "blue", $space: rgb),
   );
 
   @each $name, $value in $rgb {
     $value: if(
       divide($value, 255) < 0.04045,
       divide(divide($value, 255), 12.92),
-      nth(
+      list.nth(
         $_luminance-list,
         math.round($value + 1)
           // Integer expected
       )
     );
-    $rgb: map-merge(
+    $rgb: map.merge(
       $rgb,
       (
         $name: $value,
@@ -272,25 +279,25 @@ $_luminance-list: 0.0008 0.001 0.0011 0.0013 0.0015 0.0017 0.002 0.0022 0.0025
     );
   }
 
-  @return (map-get($rgb, 'r') * 0.2126) + (map-get($rgb, 'g') * 0.7152) +
-    (map-get($rgb, 'b') * 0.0722);
+  @return (map.get($rgb, 'r') * 0.2126) + (map.get($rgb, 'g') * 0.7152) +
+    (map.get($rgb, 'b') * 0.0722);
 }
 
 // Return opaque color
 // opaque(#fff, rgba(0, 0, 0, .5)) => #808080
 @function opaque($background, $foreground) {
-  @return mix(rgba($foreground, 1), $background, opacity($foreground) * 100%);
+  @return color.mix(rgba($foreground, 1), $background, color.opacity($foreground) * 100%);
 }
 
 // scss-docs-start color-functions
 // Tint a color: mix a color with white
 @function tint-color($color, $weight) {
-  @return mix(white, $color, $weight);
+  @return color.mix(white, $color, $weight);
 }
 
 // Shade a color: mix a color with black
 @function shade-color($color, $weight) {
-  @return mix(black, $color, $weight);
+  @return color.mix(black, $color, $weight);
 }
 
 // Shade the color if the weight is positive, else tint it
@@ -313,11 +320,11 @@ $_luminance-list: 0.0008 0.001 0.0011 0.0013 0.0015 0.0017 0.002 0.0022 0.0025
     @return $value1;
   }
 
-  @if type-of($value1) ==
+  @if meta.type-of($value1) ==
     number and
-    type-of($value2) ==
+    meta.type-of($value2) ==
     number and
-    comparable($value1, $value2)
+    math.compatible($value1, $value2)
   {
     @return $value1 + $value2;
   }
@@ -325,7 +332,7 @@ $_luminance-list: 0.0008 0.001 0.0011 0.0013 0.0015 0.0017 0.002 0.0022 0.0025
   @return if(
     $return-calc == true,
     calc(#{$value1} + #{$value2}),
-    $value1 + unquote(' + ') + $value2
+    $value1 + string.unquote(' + ') + $value2
   );
 }
 
@@ -342,23 +349,23 @@ $_luminance-list: 0.0008 0.001 0.0011 0.0013 0.0015 0.0017 0.002 0.0022 0.0025
     @return $value1;
   }
 
-  @if type-of($value1) ==
+  @if meta.type-of($value1) ==
     number and
-    type-of($value2) ==
+    meta.type-of($value2) ==
     number and
-    comparable($value1, $value2)
+    math.compatible($value1, $value2)
   {
     @return $value1 - $value2;
   }
 
-  @if type-of($value2) != number {
-    $value2: unquote('(') + $value2 + unquote(')');
+  @if meta.type-of($value2) != number {
+    $value2: string.unquote('(') + $value2 + string.unquote(')');
   }
 
   @return if(
     $return-calc == true,
     calc(#{$value1} - #{$value2}),
-    $value1 + unquote(' - ') + $value2
+    $value1 + string.unquote(' - ') + $value2
   );
 }
 
@@ -368,8 +375,8 @@ $_luminance-list: 0.0008 0.001 0.0011 0.0013 0.0015 0.0017 0.002 0.0022 0.0025
     1,
     -1
   );
-  $dividend: abs($dividend);
-  $divisor: abs($divisor);
+  $dividend: math.abs($dividend);
+  $divisor: math.abs($divisor);
   @if $dividend == 0 {
     @return 0;
   }
@@ -394,8 +401,8 @@ $_luminance-list: 0.0008 0.001 0.0011 0.0013 0.0015 0.0017 0.002 0.0022 0.0025
     }
   }
   $result: $result * $factor * $sign;
-  $dividend-unit: unit($dividend);
-  $divisor-unit: unit($divisor);
+  $dividend-unit: math.unit($dividend);
+  $divisor-unit: math.unit($divisor);
   $unit-map: (
     'px': 1px,
     'rem': 1rem,
@@ -403,9 +410,9 @@ $_luminance-list: 0.0008 0.001 0.0011 0.0013 0.0015 0.0017 0.002 0.0022 0.0025
     '%': 1%,
   );
   @if (
-    $dividend-unit != $divisor-unit and map-has-key($unit-map, $dividend-unit)
+    $dividend-unit != $divisor-unit and map.has-key($unit-map, $dividend-unit)
   ) {
-    $result: $result * map-get($unit-map, $dividend-unit);
+    $result: $result * map.get($unit-map, $dividend-unit);
   }
   @return $result;
 }

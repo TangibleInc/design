@@ -1,10 +1,10 @@
 .idea
 
 # Ignore lock files to allow any package manager
+bun.lockb
 composer.lock
 package-lock.json
 yarn.lock
-bun.lockb
 
 /artifacts
 

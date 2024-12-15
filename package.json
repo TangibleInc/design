@@ -16,27 +16,27 @@
   "dependencies": {
     "@popperjs/core": "^2.11.8",
     "classnames": "^2.5.1",
-    "prop-types": "^15.8.1",
-    "react-transition-group": "^4.4.5"
-  },
-  "devDependencies": {
-    "@docusaurus/core": "3.5.2",
-    "@docusaurus/module-type-aliases": "3.5.2",
-    "@docusaurus/preset-classic": "3.5.2",
-    "@docusaurus/tsconfig": "3.5.2",
-    "@docusaurus/types": "3.5.2",
-    "@mdx-js/react": "^3.0.1",
-    "@tangible/roller": "^2.1.1",
-    "@types/react": "^18.3.11",
-    "@types/react-transition-group": "^4.4.11",
     "clsx": "^2.1.1",
-    "docusaurus-lunr-search": "^3.5.0",
-    "docusaurus-plugin-sass": "^0.2.5",
+    "prop-types": "^15.8.1",
     "prism-react-renderer": "^2.4.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "sass": "1.79.5",
-    "typescript": "^5.6.3"
+    "react-transition-group": "^4.4.5"
+  },
+  "devDependencies": {
+    "@docusaurus/core": "3.6.3",
+    "@docusaurus/module-type-aliases": "3.6.3",
+    "@docusaurus/preset-classic": "3.6.3",
+    "@docusaurus/tsconfig": "3.6.3",
+    "@docusaurus/types": "3.6.3",
+    "@mdx-js/react": "^3.1.0",
+    "@tangible/roller": "^2.1.4",
+    "@types/react": "^18.3.12",
+    "@types/react-transition-group": "^4.4.11",
+    "docusaurus-lunr-search": "^3.5.0",
+    "docusaurus-plugin-sass": "^0.2.5",
+    "sass": "1.79.0",
+    "typescript": "^5.7.2"
   },
   "peerDependencies": {
     "react": ">=18",

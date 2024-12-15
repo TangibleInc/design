@@ -1,3 +1,4 @@
+
 //
 // Headings
 // Don't extend h elements because they might be prefixed or under parent selector
@@ -107,7 +108,7 @@
 }
 
 .#{$class-prefix}blockquote-footer {
-  margin-top: -$blockquote-margin-y;
+  margin-top: -($blockquote-margin-y);
   margin-bottom: $blockquote-margin-y;
   @include font-size($blockquote-footer-font-size);
   color: $blockquote-footer-color;
