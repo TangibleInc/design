@@ -1,0 +1,158 @@
+---
+sidebar_position: 0
+title: Design Tokens
+---
+
+# Design tokens
+
+The foundation of a design system is a set of design tokens. They are like "atoms" of CSS properties for styling HTML elements. By curating and customizing their values, the user interface is built with consistent styles and theming.
+
+Token definitions are represented in JSON, and compiled to CSS, Sass, TypeScript. Ideally support import/export of variables from Figma and other design tools.
+
+This section is informed by:
+
+- [Contentful: Design token system](https://www.contentful.com/blog/design-token-system/)
+- [Figma: Tokens, variables, and styles](https://help.figma.com/hc/en-us/articles/18490793776023-Update-1-Tokens-variables-and-styles#token-organization)
+- [Atlassian: Design Tokens](https://atlassian.design/tokens/design-tokens)
+
+## Token organization
+
+Tokens can be categorized as primitive, semantic, and component tokens.
+
+- Primitive - `space-1`, `color-grey-3`
+- Semantic - `color-primary`, `font-family-serif`
+- Component - `button-border-color`, `accordion-transition-duration`
+
+Use primitive tokens to define the semantic tokens; then use them to style components. This layered approach is helpful for supporting component variants, light/dark modes, and extensible themes.
+
+## Primitive tokens
+
+Primitive tokens define all properties and values that exist in a design system.
+
+- Colors, opacity, background, borders, shadows, gradients, animations, easing
+- Size and space, margin, padding, gap, content widths, media query breakpoints
+- Display, flex, grid, float, align, overflow, position, visibility, z-index, aspect ratios, object fit
+- Font families, sizes, weights
+
+These values provide the foundation for semantic and component tokens. Any CSS property can be expressed as tokens for shared values to style components.
+
+See [MDN Web Docs: CSS Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference) for a list of all CSS properties.
+
+## Semantic tokens
+
+Semantic tokens is a layer of meaningful tokens named by purpose, such as the site's primary and secondary colors, or typography and other styles for a company's branding. They are all defined by using primitive values.
+
+For the users of the design system, semantic tokens provide guidance on how the values are meant to be used in an application interface.
+
+## Component tokens
+
+Each component is styled using semantic tokens, and can optionally provide component tokens for user customization.
+
+For example, the `Button` component can have `primary` and `secondary` variants, each with interactive states `default`, `hover`, `disabled`. Here's how all the style variations can be defined from primitive, semantic, to component layers.
+
+#### Primitve tokens
+
+```scss
+:root {
+  --pink-100: #FDCAE4;
+  --pink-400: #F55DAF;
+  --neutral-0: #E3E4EB;
+  --neutral-200: #FFFFFF;
+  --neutral-800: #323241;
+}
+```
+
+#### Semantic tokens
+
+```scss
+:root {
+  --brand-contrast: var(--pink-400);
+  --brand-secondary: var(--pink-100);
+  --heavy-contrast: var(--neutral-800);
+  --surface-primary: var(--neutral-0);
+  --surface-secondary: var(--neutral-200);
+  --surface-contrast: var(--neutral-800);
+}
+
+```
+
+#### Component tokens
+
+```scss
+.t-Button {
+  --button-primary-background: var(--brand-contrast);
+  --button-primary-background-hover: var(--brand-secondary);
+  --button-primary-background-disabled: var(--heavy-contrast);
+  --button-secondary-background: var(--surface-secondary);
+  --button-secondary-background-hover: var(--surface-primary);
+  --button-secondary-background-disabled: var(--surface-contrast);
+
+  &-primary {
+    background-color: var(--button-primary-background);
+    &:hover {
+      background-color: var(--button-primary-background-hover);
+    }
+    &:disabled {
+      background-color: var(--button-primary-background-disabled);
+    }
+  }
+
+  &-secondary {
+    // ...
+  }
+}
+```
+
+## Theme
+
+A theme is the entire set of token collections used by all components. New themes are created by defining a different set of token values.
+
+The purpose of a theme is to achieve a certain look or style. Themes are how we switch color schemes and styles everywhere using a single set of tokens.
+
+Light mode, dark mode, and high-contrast mode are all examples of theming. Non-color themes are also possible: think cozy/comfortable/compact views, reduced motion, or custom typography styles.
+
+Themes are useful when you need a distinct style or appearance, such as different brand identities, while maintaining the same structural hierarchy of tokens. If you're creating a single suite of components for two distinct brands, you might need entirely different values for tokens, but the underlying structure remains consistent.
+
+### Mode
+
+A mode is a variation of a token's value depending on context.
+
+For example, a button can have background color that supports light/dark modes.
+
+#### Primitve tokens
+
+```scss
+/* Primitive tokens */
+:root {
+  --color-blue-100: #0E225D;
+  --color-blue-400: #1F5FBF;
+}
+```
+
+#### Semantic tokens
+
+```scss
+:root, .light-mode {
+  --background-primary: var(--color-blue-400);
+}
+
+.dark-mode {
+  --background-primary: var(--color-blue-400);  
+}
+
+```
+
+#### Component tokens
+
+```scss
+button {
+  --button-primary-background: var(--background-primary);
+  background-color: var(--button-primary-background);
+}
+```
+
+When in light or dark mode, the button will have a background of a brighter or darker blue.
+
+### Collections
+
+A collection is any group of tokens organized by purpose. For example, a collection of colors with light/dark modes; or a collection of typography variables.

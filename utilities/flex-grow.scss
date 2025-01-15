@@ -1,0 +1,40 @@
+// @breakpoints {
+  .t-fg {
+    /* Keep this selector here to maintain the source order */
+  }
+  .t-fg-0 {
+    flex-grow: 0;
+  }
+  .t-fg-1 {
+    flex-grow: 1;
+  }
+// }
+
+.t-fg {
+  flex-grow: var(--flex-grow);
+}
+@media (--xs) {
+  .xs\:t-fg {
+    flex-grow: var(--flex-grow-xs);
+  }
+}
+@media (--sm) {
+  .sm\:t-fg {
+    flex-grow: var(--flex-grow-sm);
+  }
+}
+@media (--md) {
+  .md\:t-fg {
+    flex-grow: var(--flex-grow-md);
+  }
+}
+@media (--lg) {
+  .lg\:t-fg {
+    flex-grow: var(--flex-grow-lg);
+  }
+}
+@media (--xl) {
+  .xl\:t-fg {
+    flex-grow: var(--flex-grow-xl);
+  }
+}

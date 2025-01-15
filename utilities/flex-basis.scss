@@ -1,0 +1,28 @@
+.t-fb {
+  flex-basis: var(--flex-basis);
+}
+@media (--xs) {
+  .xs\:t-fb {
+    flex-basis: var(--flex-basis-xs);
+  }
+}
+@media (--sm) {
+  .sm\:t-fb {
+    flex-basis: var(--flex-basis-sm);
+  }
+}
+@media (--md) {
+  .md\:t-fb {
+    flex-basis: var(--flex-basis-md);
+  }
+}
+@media (--lg) {
+  .lg\:t-fb {
+    flex-basis: var(--flex-basis-lg);
+  }
+}
+@media (--xl) {
+  .xl\:t-fb {
+    flex-basis: var(--flex-basis-xl);
+  }
+}

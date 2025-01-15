@@ -1,0 +1,33 @@
+.t-ga {
+  grid-area: var(--grid-area);
+}
+
+@media (--xs) {
+  .xs\:t-ga {
+    grid-area: var(--grid-area-xs);
+  }
+}
+
+@media (--sm) {
+  .sm\:t-ga {
+    grid-area: var(--grid-area-sm);
+  }
+}
+
+@media (--md) {
+  .md\:t-ga {
+    grid-area: var(--grid-area-md);
+  }
+}
+
+@media (--lg) {
+  .lg\:t-ga {
+    grid-area: var(--grid-area-lg);
+  }
+}
+
+@media (--xl) {
+  .xl\:t-ga {
+    grid-area: var(--grid-area-xl);
+  }
+}

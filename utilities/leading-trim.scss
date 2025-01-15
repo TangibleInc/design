@@ -1,0 +1,32 @@
+// @breakpoints {
+  .t-lt-normal::before,
+  .t-lt-end::before,
+  .t-lt-normal::after,
+  .t-lt-start::after {
+    content: none;
+  }
+
+  .t-lt-start::before,
+  .t-lt-both::before,
+  .t-lt-end::after,
+  .t-lt-both::after {
+    content: '';
+    display: table;
+  }
+
+  .t-lt-start::before,
+  .t-lt-both::before {
+    margin-bottom: calc(
+      var(--leading-trim-start, var(--default-leading-trim-start)) -
+        var(--line-height, calc(1em * var(--default-line-height))) / 2
+    );
+  }
+
+  .t-lt-end::after,
+  .t-lt-both::after {
+    margin-top: calc(
+      var(--leading-trim-end, var(--default-leading-trim-end)) -
+        var(--line-height, calc(1em * var(--default-line-height))) / 2
+    );
+  }
+// }

@@ -1,0 +1,47 @@
+import Accents from '@site/docs/examples/colors-accents'
+import Gradations, {
+  WhiteBlackAlphaGradients
+} from '@site/docs/examples/colors-gradations'
+
+# Radix Colors
+
+Here is the default set of colors based on [Radix UI Colors](https://www.radix-ui.com/colors).
+
+<Accents />
+
+Colors can be imported separately as needed, even combined with other sets of colors. They're all optional and  meant for defining semantic tokens such as theme and component variables.
+
+## Gradations
+
+A color has gradations from `1` up to `12`, from light to dark. In dark mode, they go dark to light.
+
+<Gradations />
+
+### Steps guide
+
+- Steps 1 – 2: Backgrounds
+  - App backgrounds and subtle component backgrounds. 
+- Steps 3 – 5: Component backgrounds
+  - 3: Normal states.
+  - 4: Hover states.
+  - 5: Pressed or selected states.
+- Steps 6 – 8: Borders
+  - 6: Subtle borders on components which are not interactive. For example sidebars, headers, cards, alerts, and separators.
+  - 7: Subtle borders on interactive components.
+  - 8: Stronger borders on interactive components and focus rings.
+- Steps 9 – 10: Solid backgrounds
+  - 9: Component's normal state background
+  - 10: Component hover states
+- Steps 11 – 12: Text
+  - 11: Low-contrast text.
+  - 12: High-contrast text.
+
+## Dark
+
+A color can optionally have a `dark` variant for use in dark themes.
+
+## Alpha
+
+A color can optionally have an `alpha` variant for transparency/opacity. They're useful for shadows, highlights, and overlays.
+
+<WhiteBlackAlphaGradients />

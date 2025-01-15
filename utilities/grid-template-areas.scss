@@ -1,0 +1,28 @@
+.t-gta {
+  grid-template-areas: var(--grid-template-areas);
+}
+@media (--xs) {
+  .xs\:t-gta {
+    grid-template-areas: var(--grid-template-areas-xs);
+  }
+}
+@media (--sm) {
+  .sm\:t-gta {
+    grid-template-areas: var(--grid-template-areas-sm);
+  }
+}
+@media (--md) {
+  .md\:t-gta {
+    grid-template-areas: var(--grid-template-areas-md);
+  }
+}
+@media (--lg) {
+  .lg\:t-gta {
+    grid-template-areas: var(--grid-template-areas-lg);
+  }
+}
+@media (--xl) {
+  .xl\:t-gta {
+    grid-template-areas: var(--grid-template-areas-xl);
+  }
+}

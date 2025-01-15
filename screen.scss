@@ -1,0 +1,16 @@
+// TODO: Convert to mixin
+// Some components use custom function @breakpoints to generate classes
+
+// @custom-media --xs (min-width: 520px);
+// @custom-media --sm (min-width: 768px);
+// @custom-media --md (min-width: 1024px);
+// @custom-media --lg (min-width: 1280px);
+// @custom-media --xl (min-width: 1640px);
+
+.t-design {
+  --screen-xs: 520px;
+  --screen-sm: 768px;
+  --screen-md: 1024px;
+  --screen-lg: 1280px;
+  --screen-xl: 1640px;
+}

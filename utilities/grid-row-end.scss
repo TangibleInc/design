@@ -1,0 +1,61 @@
+// @breakpoints {
+  .t-gre {
+    /* Keep this selector here to maintain the source order */
+  }
+  .t-gre-1 {
+    grid-row-end: 1;
+  }
+  .t-gre-2 {
+    grid-row-end: 2;
+  }
+  .t-gre-3 {
+    grid-row-end: 3;
+  }
+  .t-gre-4 {
+    grid-row-end: 4;
+  }
+  .t-gre-5 {
+    grid-row-end: 5;
+  }
+  .t-gre-6 {
+    grid-row-end: 6;
+  }
+  .t-gre-7 {
+    grid-row-end: 7;
+  }
+  .t-gre-8 {
+    grid-row-end: 8;
+  }
+  .t-gre-9 {
+    grid-row-end: 9;
+  }
+// }
+
+.t-gre {
+  grid-row-end: var(--grid-row-end);
+}
+@media (--xs) {
+  .xs\:t-gre {
+    grid-row-end: var(--grid-row-end-xs);
+  }
+}
+@media (--sm) {
+  .sm\:t-gre {
+    grid-row-end: var(--grid-row-end-sm);
+  }
+}
+@media (--md) {
+  .md\:t-gre {
+    grid-row-end: var(--grid-row-end-md);
+  }
+}
+@media (--lg) {
+  .lg\:t-gre {
+    grid-row-end: var(--grid-row-end-lg);
+  }
+}
+@media (--xl) {
+  .xl\:t-gre {
+    grid-row-end: var(--grid-row-end-xl);
+  }
+}

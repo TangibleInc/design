@@ -1,0 +1,70 @@
+// https://ui.shadcn.com/docs/components/accordion
+// https://www.radix-ui.com/primitives/docs/components/accordion
+.t-Accordion {
+  &-Trigger {
+    display: flex;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    flex: 1 1 0%;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &[data-state="open"] > .t-Accordion-Chevron {
+      transform: rotate(180deg);
+    }    
+  }
+
+  &-Chevron {
+    shrink: 0;
+    width: 1rem;
+    height: 1rem;
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+    transition-duration: 200ms;
+  }
+
+  &-Content {
+    overflow: hidden;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+
+    &[data-state='open'] {
+      animation: t-Accordion-SlideDown 300ms cubic-bezier(0.87, 0, 0.13, 1);
+    }
+
+    &[data-state='closed'] {
+      animation: t-Accordion-SlideUp 300ms cubic-bezier(0.87, 0, 0.13, 1);
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid var(--slate-1);
+    }
+  }
+}
+
+@keyframes t-Accordion-SlideDown {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes t-Accordion-SlideUp {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}

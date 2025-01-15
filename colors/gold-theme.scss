@@ -1,0 +1,33 @@
+@import './gold';
+@import './gold-dark';
+@import './gold-alpha';
+@import './gold-dark-alpha';
+
+:root {
+  --gold-contrast: white;
+}
+
+:root,
+
+.light-theme, [data-theme='light'] {
+  --gold-surface: #f9f8efcc;
+  --gold-indicator: var(--gold-9);
+  --gold-track: var(--gold-9);
+  @supports (color: color(display-p3 1 1 1)) {
+    @media (color-gamut: p3) {
+      --gold-surface: color(display-p3 0.9765 0.9725 0.9412 / 0.8);
+    }
+  }
+}
+
+
+.dark-theme, [data-theme='dark'] {
+  --gold-surface: #25231d80;
+  --gold-indicator: var(--gold-9);
+  --gold-track: var(--gold-9);
+  @supports (color: color(display-p3 1 1 1)) {
+    @media (color-gamut: p3) {
+      --gold-surface: color(display-p3 0.1412 0.1333 0.1098 / 0.5);
+    }
+  }
+}

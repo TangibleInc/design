@@ -1,0 +1,28 @@
+.t-w {
+  width: var(--width);
+}
+@media (--xs) {
+  .xs\:t-w {
+    width: var(--width-xs);
+  }
+}
+@media (--sm) {
+  .sm\:t-w {
+    width: var(--width-sm);
+  }
+}
+@media (--md) {
+  .md\:t-w {
+    width: var(--width-md);
+  }
+}
+@media (--lg) {
+  .lg\:t-w {
+    width: var(--width-lg);
+  }
+}
+@media (--xl) {
+  .xl\:t-w {
+    width: var(--width-xl);
+  }
+}

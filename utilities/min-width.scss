@@ -1,0 +1,28 @@
+.t-min-w {
+  min-width: var(--min-width);
+}
+@media (--xs) {
+  .xs\:t-min-w {
+    min-width: var(--min-width-xs);
+  }
+}
+@media (--sm) {
+  .sm\:t-min-w {
+    min-width: var(--min-width-sm);
+  }
+}
+@media (--md) {
+  .md\:t-min-w {
+    min-width: var(--min-width-md);
+  }
+}
+@media (--lg) {
+  .lg\:t-min-w {
+    min-width: var(--min-width-lg);
+  }
+}
+@media (--xl) {
+  .xl\:t-min-w {
+    min-width: var(--min-width-xl);
+  }
+}

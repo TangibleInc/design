@@ -1,0 +1,40 @@
+// @breakpoints {
+  .t-fs {
+    /* Keep this selector here to maintain the source order */
+  }
+  .t-fs-0 {
+    flex-shrink: 0;
+  }
+  .t-fs-1 {
+    flex-shrink: 1;
+  }
+// }
+
+.t-fs {
+  flex-shrink: var(--flex-shrink);
+}
+@media (--xs) {
+  .xs\:t-fs {
+    flex-shrink: var(--flex-shrink-xs);
+  }
+}
+@media (--sm) {
+  .sm\:t-fs {
+    flex-shrink: var(--flex-shrink-sm);
+  }
+}
+@media (--md) {
+  .md\:t-fs {
+    flex-shrink: var(--flex-shrink-md);
+  }
+}
+@media (--lg) {
+  .lg\:t-fs {
+    flex-shrink: var(--flex-shrink-lg);
+  }
+}
+@media (--xl) {
+  .xl\:t-fs {
+    flex-shrink: var(--flex-shrink-xl);
+  }
+}

@@ -1,9 +1,254 @@
 /**
- * Base - Pure Sass with no CSS output
+ * Base
+ * Default styling for HTML elements without classes
  */
-@import "functions";
-@import "variables";
-@import "variables-dark";
-@import "maps";
-@import "mixins";
-@import "utilities";
+@use 'sass:color';
+@use './components/heading';
+@use './components/link';
+@use './components/reset';
+@use './components/text';
+
+// Link
+
+a {
+  @extend .t-reset, .t-Link;
+  color: var(--accent-a11);
+  &:where(:hover) {
+    color: var(--accent-a12);
+    text-decoration-line: underline;
+  }
+}
+
+// List
+
+ul {
+  list-style: disc;
+  margin-top: 0px;
+  margin-bottom: var(--space-6);
+  padding-left: var(--space-6);
+  li li {
+    list-style: circle;
+  }
+}
+
+li {
+  margin-bottom: var(--space-2);
+}
+
+// Code
+
+pre {
+  display: block;
+  overflow-x: auto;
+
+  margin-top: 0px;
+  margin-bottom: 2.5rem;
+  padding: 1em;
+
+  background-color: var(--accent-a2);
+  color: var(--accent-a11);
+
+  font-size: 0.9em;
+}
+
+code,
+kbd,
+samp {
+  padding: 0 0.5em;
+
+  background-color: var(--accent-a3);
+  color: var(--accent-a11);
+
+  font-size: 0.9em;
+  white-space: pre-wrap;
+}
+
+pre > code {
+  padding: 0;
+
+  background-color: transparent;
+
+  font-size: 1em;
+  white-space: pre;
+}
+
+// Headings
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+
+  @extend .t-Heading;
+
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+
+  // line-height: 1.1;
+  // font-family: $font-family-heading;
+  // font-weight: 700;
+
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-word;
+}
+
+h1 {
+  font-size: 2.35em;
+}
+h2 {
+  font-size: 2em;
+}
+h3 {
+  font-size: 1.75em;
+}
+h4 {
+  font-size: 1.5em;
+}
+h5 {
+  font-size: 1.25em;
+}
+h6 {
+  font-size: 1em;
+}
+
+// Paragraph
+
+p {
+  @extend .t-Text;
+  margin: 1rem 0;
+}
+
+small,
+sub,
+sup {
+  font-size: 75%;
+}
+
+hr {
+  margin: 2rem 0;
+  border-color: var(--accent-a11);
+}
+
+blockquote {
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-left: 1em;
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+  padding-right: 0.8em;
+  border-left: 5px solid var(--accent-a12);
+  margin-bottom: 2.5rem;
+  background-color: var(--color-background);
+}
+
+blockquote p {
+  margin-bottom: 0;
+}
+
+img,
+video {
+  height: auto;
+  max-width: 100%;
+  margin-top: 0px;
+  margin-bottom: 2.5rem;
+}
+
+/* Tables */
+
+table {
+  text-align: justify;
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+}
+
+td,
+th {
+  padding: 0.5em;
+  border-bottom: 1px solid var(--color-background);
+}
+
+/* Buttons, forms and input */
+
+input,
+textarea {
+  border: 1px solid var(--accent-a11);
+
+  &:focus {
+    border: 1px solid var(--accent-a3);
+  }
+}
+
+textarea {
+  width: 100%;
+}
+
+.button,
+button,
+input[type='submit'],
+input[type='reset'],
+input[type='button'],
+input[type='file']::file-selector-button {
+  display: inline-block;
+  // padding: 5px 10px;
+  // text-align: center;
+  // text-decoration: none;
+  // white-space: nowrap;
+
+  // background-color: var(--accent-a3);
+  // color: $color-bg;
+  // border-radius: 1px;
+  // border: 1px solid var(--accent-a3);
+  // cursor: pointer;
+  // box-sizing: border-box;
+
+  &[disabled] {
+    // cursor: default;
+    // opacity: .5;
+  }
+
+  &:hover {
+    // background-color: $color-fade;
+    // color: $color-bg;
+    outline: 0;
+  }
+
+  &:focus-visible {
+    // outline-style: solid;
+    // outline-width: 2px;
+  }
+}
+
+textarea,
+select,
+input {
+  color: var(--accent-a11);
+  padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
+  margin-bottom: 10px;
+  background-color: var(--color-background);
+  border: 1px solid var(--color-background);
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box;
+
+  &:focus {
+    border: 1px solid var(--accent-a3);
+    outline: 0;
+  }
+}
+
+input[type='checkbox']:focus {
+  outline: 1px dotted var(--accent-a3);
+}
+
+label,
+legend,
+fieldset {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}

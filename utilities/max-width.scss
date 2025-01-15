@@ -1,0 +1,28 @@
+.t-max-w {
+  max-width: var(--max-width);
+}
+@media (--xs) {
+  .xs\:t-max-w {
+    max-width: var(--max-width-xs);
+  }
+}
+@media (--sm) {
+  .sm\:t-max-w {
+    max-width: var(--max-width-sm);
+  }
+}
+@media (--md) {
+  .md\:t-max-w {
+    max-width: var(--max-width-md);
+  }
+}
+@media (--lg) {
+  .lg\:t-max-w {
+    max-width: var(--max-width-lg);
+  }
+}
+@media (--xl) {
+  .xl\:t-max-w {
+    max-width: var(--max-width-xl);
+  }
+}

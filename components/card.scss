@@ -1,238 +1,212 @@
-//
-// Base styles
-//
+@import './base-card';
 
-.#{$class-prefix}card {
-  // scss-docs-start card-css-vars
-  --#{$prefix}card-spacer-y: #{$card-spacer-y};
-  --#{$prefix}card-spacer-x: #{$card-spacer-x};
-  --#{$prefix}card-title-spacer-y: #{$card-title-spacer-y};
-  --#{$prefix}card-title-color: #{$card-title-color};
-  --#{$prefix}card-subtitle-color: #{$card-subtitle-color};
-  --#{$prefix}card-border-width: #{$card-border-width};
-  --#{$prefix}card-border-color: #{$card-border-color};
-  --#{$prefix}card-border-radius: #{$card-border-radius};
-  --#{$prefix}card-box-shadow: #{$card-box-shadow};
-  --#{$prefix}card-inner-border-radius: #{$card-inner-border-radius};
-  --#{$prefix}card-cap-padding-y: #{$card-cap-padding-y};
-  --#{$prefix}card-cap-padding-x: #{$card-cap-padding-x};
-  --#{$prefix}card-cap-bg: #{$card-cap-bg};
-  --#{$prefix}card-cap-color: #{$card-cap-color};
-  --#{$prefix}card-height: #{$card-height};
-  --#{$prefix}card-color: #{$card-color};
-  --#{$prefix}card-bg: #{$card-bg};
-  --#{$prefix}card-img-overlay-padding: #{$card-img-overlay-padding};
-  --#{$prefix}card-group-margin: #{$card-group-margin};
-  // scss-docs-end card-css-vars
+/* stylelint-disable selector-max-type */
+/* Disable selector-max-type rule to target `button` and `a` tags. */
+/* Make sure these tags are wrapped in `:where()` for 0 specificity. */
 
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-width: 0; // See https://github.com/twbs/bootstrap/pull/22740#issuecomment-305868106
-  height: var(--#{$prefix}card-height);
-  color: var(--#{$prefix}body-color);
-  word-wrap: break-word;
-  background-color: var(--#{$prefix}card-bg);
-  background-clip: border-box;
-  border: var(--#{$prefix}card-border-width) solid var(--#{$prefix}card-border-color);
-  @include border-radius(var(--#{$prefix}card-border-radius));
-  @include box-shadow(var(--#{$prefix}card-box-shadow));
+.t-Card {
+  --base-card-padding-top: var(--card-padding);
+  --base-card-padding-right: var(--card-padding);
+  --base-card-padding-bottom: var(--card-padding);
+  --base-card-padding-left: var(--card-padding);
+  --base-card-border-radius: var(--card-border-radius);
+  --base-card-border-width: var(--card-border-width);
 
-  > hr {
-    margin-right: 0;
-    margin-left: 0;
-  }
+  &:where(:focus-visible) {
+    outline: 2px solid var(--focus-8);
+    outline-offset: -1px;
 
-  > .#{$class-prefix}list-group {
-    border-top: inherit;
-    border-bottom: inherit;
-
-    &:first-child {
-      border-top-width: 0;
-      @include border-top-radius(var(--#{$prefix}card-inner-border-radius));
+    &::after {
+      outline: inherit;
     }
-
-    &:last-child  {
-      border-bottom-width: 0;
-      @include border-bottom-radius(var(--#{$prefix}card-inner-border-radius));
-    }
-  }
-
-  // Due to specificity of the above selector (`.card > .list-group`), we must
-  // use a child selector here to prevent double borders.
-  > .#{$class-prefix}card-header + .#{$class-prefix}list-group,
-  > .#{$class-prefix}list-group + .#{$class-prefix}card-footer {
-    border-top: 0;
-  }
-}
-
-.#{$class-prefix}card-body {
-  // Enable `flex-grow: 1` for decks and groups so that card blocks take up
-  // as much space as possible, ensuring footers are aligned to the bottom.
-  flex: 1 1 auto;
-  padding: var(--#{$prefix}card-spacer-y) var(--#{$prefix}card-spacer-x);
-  color: var(--#{$prefix}card-color);
-}
-
-.#{$class-prefix}card-title {
-  margin-bottom: var(--#{$prefix}card-title-spacer-y);
-  color: var(--#{$prefix}card-title-color);
-}
-
-.#{$class-prefix}card-subtitle {
-  margin-top: calc(-.5 * var(--#{$prefix}card-title-spacer-y)); // stylelint-disable-line function-disallowed-list
-  margin-bottom: 0;
-  color: var(--#{$prefix}card-subtitle-color);
-}
-
-.#{$class-prefix}card-text:last-child {
-  margin-bottom: 0;
-}
-
-.#{$class-prefix}card-link {
-  &:hover {
-    text-decoration: if($link-hover-decoration == underline, none, null);
-  }
-
-  + .#{$class-prefix}card-link {
-    margin-left: var(--#{$prefix}card-spacer-x);
-  }
-}
-
-//
-// Optional textual caps
-//
-
-.#{$class-prefix}card-header {
-  padding: var(--#{$prefix}card-cap-padding-y) var(--#{$prefix}card-cap-padding-x);
-  margin-bottom: 0; // Removes the default margin-bottom of <hN>
-  color: var(--#{$prefix}card-cap-color);
-  background-color: var(--#{$prefix}card-cap-bg);
-  border-bottom: var(--#{$prefix}card-border-width) solid var(--#{$prefix}card-border-color);
-
-  &:first-child {
-    @include border-radius(var(--#{$prefix}card-inner-border-radius) var(--#{$prefix}card-inner-border-radius) 0 0);
-  }
-}
-
-.#{$class-prefix}card-footer {
-  padding: var(--#{$prefix}card-cap-padding-y) var(--#{$prefix}card-cap-padding-x);
-  color: var(--#{$prefix}card-cap-color);
-  background-color: var(--#{$prefix}card-cap-bg);
-  border-top: var(--#{$prefix}card-border-width) solid var(--#{$prefix}card-border-color);
-
-  &:last-child {
-    @include border-radius(0 0 var(--#{$prefix}card-inner-border-radius) var(--#{$prefix}card-inner-border-radius));
-  }
-}
-
-
-//
-// Header navs
-//
-
-.#{$class-prefix}card-header-tabs {
-  margin-right: calc(-.5 * var(--#{$prefix}card-cap-padding-x)); // stylelint-disable-line function-disallowed-list
-  margin-bottom: calc(-1 * var(--#{$prefix}card-cap-padding-y)); // stylelint-disable-line function-disallowed-list
-  margin-left: calc(-.5 * var(--#{$prefix}card-cap-padding-x)); // stylelint-disable-line function-disallowed-list
-  border-bottom: 0;
-
-  .#{$class-prefix}nav-link.#{$class-prefix}active {
-    background-color: var(--#{$prefix}card-bg);
-    border-bottom-color: var(--#{$prefix}card-bg);
-  }
-}
-
-.#{$class-prefix}card-header-pills {
-  margin-right: calc(-.5 * var(--#{$prefix}card-cap-padding-x)); // stylelint-disable-line function-disallowed-list
-  margin-left: calc(-.5 * var(--#{$prefix}card-cap-padding-x)); // stylelint-disable-line function-disallowed-list
-}
-
-// Card image
-.#{$class-prefix}card-img-overlay {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: var(--#{$prefix}card-img-overlay-padding);
-  @include border-radius(var(--#{$prefix}card-inner-border-radius));
-}
-
-.#{$class-prefix}card-img,
-.#{$class-prefix}card-img-top,
-.#{$class-prefix}card-img-bottom {
-  width: 100%; // Required because we use flexbox and this inherently applies align-self: stretch
-}
-
-.#{$class-prefix}card-img,
-.#{$class-prefix}card-img-top {
-  @include border-top-radius(var(--#{$prefix}card-inner-border-radius));
-}
-
-.#{$class-prefix}card-img,
-.#{$class-prefix}card-img-bottom {
-  @include border-bottom-radius(var(--#{$prefix}card-inner-border-radius));
-}
-
-
-//
-// Card groups
-//
-
-.#{$class-prefix}card-group {
-  // The child selector allows nested `.card` within `.card-group`
-  // to display properly.
-  > .#{$class-prefix}card {
-    margin-bottom: var(--#{$prefix}card-group-margin);
-  }
-
-  @include media-breakpoint-up(sm) {
-    display: flex;
-    flex-flow: row wrap;
-    // The child selector allows nested `.card` within `.card-group`
-    // to display properly.
-    > .#{$class-prefix}card {
-      // Flexbugs #4: https://github.com/philipwalton/flexbugs#flexbug-4
-      flex: 1 0 0%;
-      margin-bottom: 0;
-
-      + .#{$class-prefix}card {
-        margin-left: 0;
-        border-left: 0;
+    &:where(:active:not([data-state='open'])) {
+      &::before {
+        background-image: linear-gradient(var(--focus-a2), var(--focus-a2));
       }
+    }
+  }
+}
 
-      // Handle rounded corners
-      @if $enable-rounded {
-        &:not(:last-child) {
-          @include border-end-radius(0);
+/* * * * * * * * * * * * * * * * * * * */
+/*                                     */
+/*                Sizes                */
+/*                                     */
+/* * * * * * * * * * * * * * * * * * * */
 
-          .#{$class-prefix}card-img-top,
-          .#{$class-prefix}card-header {
-            // stylelint-disable-next-line property-disallowed-list
-            border-top-right-radius: 0;
-          }
-          .#{$class-prefix}card-img-bottom,
-          .#{$class-prefix}card-footer {
-            // stylelint-disable-next-line property-disallowed-list
-            border-bottom-right-radius: 0;
-          }
+// @breakpoints {
+  .t-Card {
+    &:where(.t-size-1) {
+      --card-padding: var(--space-3);
+      --card-border-radius: var(--radius-4);
+    }
+    &:where(.t-size-2) {
+      --card-padding: var(--space-4);
+      --card-border-radius: var(--radius-4);
+    }
+    &:where(.t-size-3) {
+      --card-padding: var(--space-5);
+      --card-border-radius: var(--radius-5);
+    }
+    &:where(.t-size-4) {
+      --card-padding: var(--space-6);
+      --card-border-radius: var(--radius-5);
+    }
+    &:where(.t-size-5) {
+      --card-padding: var(--space-8);
+      --card-border-radius: var(--radius-6);
+    }
+  }
+// }
+
+/* * * * * * * * * * * * * * * * * * * */
+/*                                     */
+/*         Variants / Surface          */
+/*                                     */
+/* * * * * * * * * * * * * * * * * * * */
+
+.t-Card:where(.t-variant-surface) {
+  --card-border-width: 1px;
+  --card-background-color: var(--color-panel);
+
+  &::before {
+    background-color: var(--card-background-color);
+    backdrop-filter: var(--backdrop-filter-panel);
+  }
+  &::after {
+    box-shadow: var(--base-card-surface-box-shadow);
+  }
+  &:where(:any-link, button, label) {
+    @media (hover: hover) {
+      &:where(:hover) {
+        &::after {
+          box-shadow: var(--base-card-surface-hover-box-shadow);
         }
+      }
+    }
+    &:where([data-state='open']) {
+      &::after {
+        box-shadow: var(--base-card-surface-hover-box-shadow);
+      }
+    }
+    &:where(:active:not([data-state='open'])) {
+      &::after {
+        box-shadow: var(--base-card-surface-active-box-shadow);
+      }
+    }
+  }
+}
 
-        &:not(:first-child) {
-          @include border-start-radius(0);
+/* * * * * * * * * * * * * * * * * * * */
+/*                                     */
+/*         Variants / Classic          */
+/*                                     */
+/* * * * * * * * * * * * * * * * * * * */
 
-          .#{$class-prefix}card-img-top,
-          .#{$class-prefix}card-header {
-            // stylelint-disable-next-line property-disallowed-list
-            border-top-left-radius: 0;
-          }
-          .#{$class-prefix}card-img-bottom,
-          .#{$class-prefix}card-footer {
-            // stylelint-disable-next-line property-disallowed-list
-            border-bottom-left-radius: 0;
-          }
+.t-Card:where(.t-variant-classic) {
+  --card-border-width: 1px;
+  --card-background-color: var(--color-panel);
+
+  transition: box-shadow 120ms;
+  box-shadow: var(--base-card-classic-box-shadow-outer);
+
+  &::before {
+    background-color: var(--card-background-color);
+    backdrop-filter: var(--backdrop-filter-panel);
+  }
+  &::after {
+    box-shadow: var(--base-card-classic-box-shadow-inner);
+  }
+  &:where(:any-link, button, label) {
+    @media (hover: hover) {
+      &:where(:hover) {
+        transition-duration: 40ms;
+        box-shadow: var(--base-card-classic-hover-box-shadow-outer);
+        &::after {
+          box-shadow: var(--base-card-classic-hover-box-shadow-inner);
         }
+      }
+    }
+    &:where([data-state='open']) {
+      transition-duration: 40ms;
+      box-shadow: var(--base-card-classic-hover-box-shadow-outer);
+      &::after {
+        box-shadow: var(--base-card-classic-hover-box-shadow-inner);
+      }
+    }
+    &:where(:active:not([data-state='open'])) {
+      transition-duration: 40ms;
+      box-shadow: var(--base-card-classic-active-box-shadow-outer);
+      &::after {
+        box-shadow: var(--base-card-classic-active-box-shadow-inner);
+      }
+    }
+  }
+}
+
+/* * * * * * * * * * * * * * * * * * * */
+/*                                     */
+/*          Variants / Ghost           */
+/*                                     */
+/* * * * * * * * * * * * * * * * * * * */
+
+.t-Card:where(.t-variant-ghost) {
+  --card-border-width: 0px;
+
+  /* We reset the defined margin variables to avoid inheriting them from a higher component */
+  /* If a margin IS defined on the component itself, the utility class will win and reset it */
+  --margin-top: 0px;
+  --margin-right: 0px;
+  --margin-bottom: 0px;
+  --margin-left: 0px;
+
+  /* Define the overrides to incorporate the negative margins */
+  --margin-top-override: calc(var(--margin-top) - var(--card-padding));
+  --margin-right-override: calc(var(--margin-right) - var(--card-padding));
+  --margin-bottom-override: calc(var(--margin-bottom) - var(--card-padding));
+  --margin-left-override: calc(var(--margin-left) - var(--card-padding));
+
+  margin-top: var(--margin-top-override);
+  margin-right: var(--margin-right-override);
+  margin-bottom: var(--margin-bottom-override);
+  margin-left: var(--margin-left-override);
+
+  /* Reset the overrides on direct children */
+  :where(&) > * {
+    --margin-top-override: initial;
+    --margin-right-override: initial;
+    --margin-bottom-override: initial;
+    --margin-left-override: initial;
+  }
+  &:where(:any-link, button, label) {
+    @media (hover: hover) {
+      &:where(:hover) {
+        background-color: var(--gray-a3);
+        &:where(:focus-visible) {
+          background-color: var(--focus-a2);
+        }
+      }
+    }
+    &:where([data-state='open']) {
+      background-color: var(--gray-a3);
+      &:where(:focus-visible) {
+        background-color: var(--focus-a2);
+      }
+    }
+    &:where(:active:not([data-state='open'])) {
+      background-color: var(--gray-a4);
+      &:where(:focus-visible) {
+        background-color: var(--focus-a2);
+      }
+    }
+  }
+}
+
+/* Better -webkit-tap-highlight-color */
+.t-Card:where(:any-link, button, label) {
+  @media (pointer: coarse) {
+    &:where(:active:not(:focus-visible, [data-state='open'])) {
+      &::before {
+        background-image: linear-gradient(var(--gray-a4), var(--gray-a4));
       }
     }
   }

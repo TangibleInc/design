@@ -1,0 +1,398 @@
+---
+sidebar_position: 0
+---
+
+# HTML Elements
+
+This is a comprehensive list of common HTML elements.
+
+## Typography
+
+<p>
+  A paragraph <code>&lt;p&gt;</code> of lorem ipsum after the heading. Cascading
+  Style Sheets (CSS) is a style sheet language used for describing the
+  presentation of a document written in a markup language like HTML. CSS is a
+  cornerstone technology of the World Wide Web, alongside HTML and JavaScript.
+</p>
+<p>
+  This is normal, <strong>strong</strong>, <b>bold</b>, and <em>emphasized</em>. <a href="/">Here</a>'s a link.
+</p>
+
+<blockquote>
+  "Maecenas vehicula metus tellus, vitae congue turpis hendrerit non. Nam at dui
+  sit amet ipsum cursus ornare."
+  <footer>
+    <cite>- Phasellus eget lacinia</cite>
+  </footer>
+</blockquote>
+
+---
+
+<h1>Heading 1</h1>
+
+<h2>Heading 2</h2>
+
+<h3>Heading 3</h3>
+
+<h4>Heading 4</h4>
+
+<h5>Heading 5</h5>
+
+<h6>Heading 6</h6>
+
+## Image
+
+![Example image](/demo/paris-street-rainy-day-caillebotte-1.jpg)
+
+## Code
+
+```js
+// This logs a message to the console
+console.log('Hello, world!')
+```
+
+## Table
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Quantity</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Godzilla</td>
+      <td>2</td>
+      <td>$299.99</td>
+    </tr>
+    <tr>
+      <td>Mozilla</td>
+      <td>10</td>
+      <td>$100,000.00</td>
+    </tr>
+    <tr>
+      <td>Quesadilla</td>
+      <td>1</td>
+      <td>$2.22</td>
+    </tr>
+  </tbody>
+</table>
+
+## List
+
+<ul>
+  <li>Unordered list item 1</li>
+  <li>Unordered list item 2</li>
+  <ul>
+    <li>Unordered list item 2</li>
+  </ul>
+  <li>Unordered list item 3</li>
+</ul>
+<ol>
+  <li>Ordered list item 1</li>
+  <li>Ordered list item 2
+    <ol><li>Ordered list item 2.1</li></ol></li>
+  <li>Ordered list item 3</li>
+</ol>
+
+## Address
+
+<address>
+  mailto: <a href="mailto:john.doe@example.com">john.doe@example.com</a>
+  tel: <a href="tel:778-330-2389">778-330-2389</a>
+  sms: <a href="sms:555-555-5555">555-555-5555</a>
+</address>
+
+<h3>Lists</h3>
+<ul>
+  <li>Aliquam lobortis lacus eu libero ornare facilisis.</li>
+  <li>Nam et magna at libero scelerisque egestas.</li>
+  <li>Suspendisse id nisl ut leo finibus vehicula quis eu ex.</li>
+  <li>Proin ultricies turpis et volutpat vehicula.</li>
+</ul>
+
+## Inline elements
+
+<div className="grid">
+  <p>
+    <a href="#">Primary link</a>
+  </p>
+  <p>
+    <a href="#" className="secondary">
+      Secondary link
+    </a>
+  </p>
+  <p>
+    <a href="#" className="contrast">
+      Contrast link
+    </a>
+  </p>
+</div>
+<div className="grid">
+  <p>
+    <strong>Bold</strong>
+  </p>
+  <p>
+    <em>Italic</em>
+  </p>
+  <p>
+    <u>Underline</u>
+  </p>
+</div>
+<div className="grid">
+  <p>
+    <del>Deleted</del>
+  </p>
+  <p>
+    <ins>Inserted</ins>
+  </p>
+  <p>
+    <s>Strikethrough</s>
+  </p>
+</div>
+<div className="grid">
+  <p>
+    <small>Small </small>
+  </p>
+  <p>
+    Text <sub>Sub</sub>
+  </p>
+  <p>
+    Text <sup>Sup</sup>
+  </p>
+</div>
+<div className="grid">
+  <p>
+    <abbr title="Abbreviation" data-tooltip="Abbreviation">
+      Abbr.
+    </abbr>
+  </p>
+  <p>
+    <kbd>Kbd</kbd>
+  </p>
+  <p>
+    <mark>Highlighted</mark>
+  </p>
+</div>
+
+## Form
+
+<form onSubmit={e => {
+  e.preventDefault()
+}}>
+  <label for='email'>Email</label>
+  <input type='email' name='email' id='email' placeholder='john.doe@gmail.com' />
+
+{' '}
+
+<label for="id">User id (read only)</label>
+<input readonly name="id" id="id" value="04D6H89Z" />
+
+{' '}
+
+<label for="disabled">Random disabled input</label>
+<input disabled name="disabled" id="disabled" placeholder="Because why not?" />
+
+{' '}
+
+<label for="about">About me</label>
+<textarea name="about" id="about" placeholder="I am a textarea..."></textarea>
+
+{' '}
+
+<label>Choose a radio:</label>
+<div>
+  <input type="radio" id="john" name="drone" value="john" checked />
+  <label for="john">John Doe</label>
+</div>
+<div>
+  <input type="radio" id="jane" name="drone" value="jane" checked />
+  <label for="jane">Jane Doe</label>
+</div>
+<div>
+  <input type="radio" id="johnny" name="drone" value="johnny" checked />
+  <label for="johnny">Johnny Doe</label>
+</div>
+
+{' '}
+
+<br />
+
+{' '}
+
+<label>Checkboxes</label>
+<div>
+  <input type="checkbox" name="unchecked" id="unchecked" />
+  <label for="unchecked">Unchecked</label>
+  <input type="checkbox" name="remember" id="remember" checked />
+  <label for="remember">Remember me</label>
+</div>
+
+{' '}
+
+<input type="submit" />
+
+<hr />
+
+    <label htmlFor="search">Search</label>
+    <input
+      type="search"
+      id="search"
+      name="search"
+      placeholder="Search"
+    />
+    <label htmlFor="text">Text</label>
+    <input type="text" id="text" name="text" placeholder="Text" />
+    <small>Curabitur consequat lacus at lacus porta finibus.</small>
+    <label htmlFor="select">Select</label>
+    <select id="select" name="select" required defaultValue={1}>
+      <option
+        value={1}
+        selected
+      >
+        Select…
+      </option>
+      <option>…</option>
+    </select>
+    <label htmlFor="file">
+      File browser
+      <input type="file" id="file" name="file" />
+    </label>
+    <label htmlFor="range">
+      Range slider
+      <input
+        type="range"
+        min="0"
+        max="100"
+        defaultValue={50}
+        id="range"
+        name="range"
+      />
+    </label>
+    <div className="grid">
+      <label htmlFor="valid">
+        Valid
+        <input
+          type="text"
+          id="valid"
+          name="valid"
+          placeholder="Valid"
+          aria-invalid="false"
+        />
+      </label>
+      <label htmlFor="invalid">
+        Invalid
+        <input
+          type="text"
+          id="invalid"
+          name="invalid"
+          placeholder="Invalid"
+          aria-invalid="true"
+        />
+      </label>
+      <label htmlFor="disabled">
+        Disabled
+        <input
+          type="text"
+          id="disabled"
+          name="disabled"
+          placeholder="Disabled"
+          disabled
+        />
+      </label>
+    </div>
+
+    <div className="grid">
+      <label htmlFor="date">
+        Date
+        <input type="date" id="date" name="date" />
+      </label>
+      <label htmlFor="time">
+        Time
+        <input type="time" id="time" name="time" />
+      </label>
+      <label htmlFor="color">
+        Color
+        <input
+          type="color"
+          id="color"
+          name="color"
+          defaultValue="#0eaaaa"
+        />
+      </label>
+    </div>
+
+    <div className="grid">
+      <fieldset>
+        <legend>
+          <strong>Checkboxes</strong>
+        </legend>
+        <label htmlFor="checkbox-1">
+          <input
+            type="checkbox"
+            id="checkbox-1"
+            name="checkbox-1"
+            defaultChecked
+          />
+          Checkbox
+        </label>
+        <label htmlFor="checkbox-2">
+          <input type="checkbox" id="checkbox-2" name="checkbox-2" />
+          Checkbox
+        </label>
+      </fieldset>
+      <fieldset>
+        <legend>
+          <strong>Radio buttons</strong>
+        </legend>
+        <label htmlFor="radio-1">
+          <input
+            type="radio"
+            id="radio-1"
+            name="radio"
+            defaultValue="radio-1"
+            defaultChecked
+          />
+          Radio button
+        </label>
+        <label htmlFor="radio-2">
+          <input
+            type="radio"
+            id="radio-2"
+            name="radio"
+            defaultValue="radio-2"
+          />
+          Radio button
+        </label>
+      </fieldset>
+      <fieldset>
+        <legend>
+          <strong>Switches</strong>
+        </legend>
+        <label htmlFor="switch-1">
+          <input
+            type="checkbox"
+            id="switch-1"
+            name="switch-1"
+            role="switch"
+            defaultChecked
+          />
+          Switch
+        </label>
+        <label htmlFor="switch-2">
+          <input
+            type="checkbox"
+            id="switch-2"
+            name="switch-2"
+            role="switch"
+          />
+          Switch
+        </label>
+      </fieldset>
+    </div>
+    <input type="reset" defaultValue="Reset" />
+    <input type="submit" defaultValue="Submit" />
+
+</form>

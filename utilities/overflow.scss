@@ -1,0 +1,49 @@
+// @breakpoints {
+  .t-overflow-visible {
+    overflow: visible;
+  }
+  .t-overflow-hidden {
+    overflow: hidden;
+  }
+  .t-overflow-clip {
+    overflow: clip;
+  }
+  .t-overflow-scroll {
+    overflow: scroll;
+  }
+  .t-overflow-auto {
+    overflow: auto;
+  }
+
+  .t-ox-visible {
+    overflow-x: visible;
+  }
+  .t-ox-hidden {
+    overflow-x: hidden;
+  }
+  .t-ox-clip {
+    overflow-x: clip;
+  }
+  .t-ox-scroll {
+    overflow-x: scroll;
+  }
+  .t-ox-auto {
+    overflow-x: auto;
+  }
+
+  .t-oy-visible {
+    overflow-y: visible;
+  }
+  .t-oy-hidden {
+    overflow-y: hidden;
+  }
+  .t-oy-clip {
+    overflow-y: clip;
+  }
+  .t-oy-scroll {
+    overflow-y: scroll;
+  }
+  .t-oy-auto {
+    overflow-y: auto;
+  }
+// }

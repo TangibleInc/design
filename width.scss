@@ -1,0 +1,24 @@
+.t-design {
+  --width-1: .25rem * var(--scaling);
+  --width-2: calc(2 * var(--width-1) * var(--scaling));
+  --width-3: calc(3 * var(--width-1) * var(--scaling));
+  --width-4: calc(4 * var(--width-1) * var(--scaling));
+  --width-5: calc(5 * var(--width-1) * var(--scaling));
+  --width-6: calc(6 * var(--width-1) * var(--scaling));
+  --width-7: calc(7 * var(--width-1) * var(--scaling));
+  --width-8: calc(8 * var(--width-1) * var(--scaling));
+  --width-9: calc(9 * var(--width-1) * var(--scaling));
+  --width-10: calc(10 * var(--width-1) * var(--scaling));
+  --width-11: calc(11 * var(--width-1) * var(--scaling));
+  --width-12: calc(12 * var(--width-1) * var(--scaling));
+
+  // Reading - Comfortable width for reading
+  --width-reading: 65ch;
+
+  // Breakpoints
+  // --width-xs: var(--screen-xs);
+  // --width-sm: var(--screen-sm);
+  // --width-md: var(--screen-md);
+  // --width-lg: var(--screen-lg);
+  // --width-xl: var(--screen-xl);
+}

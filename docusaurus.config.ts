@@ -2,14 +2,14 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import {themes as prismThemes} from 'prism-react-renderer';
 
-const title = 'Design Library'
+const title = 'Design'
 
 // https://docusaurus.io/docs/next/api/themes/configuration
 const config: Config = {
   title,
   tagline: 'Building blocks for design systems',
 
-  favicon: 'img/favicon.ico',
+  favicon: 'tangible-logo/favicon.ico',
 
   // Set the production url of your site here
   url: 'https://design.tangible.one',
@@ -38,6 +38,10 @@ const config: Config = {
     'docusaurus-plugin-sass',
     'docusaurus-lunr-search',
   ],
+  markdown: {
+    mermaid: true,
+  },
+  themes: ['@docusaurus/theme-mermaid'],
   presets: [
     [
       'classic',
@@ -85,14 +89,14 @@ const config: Config = {
 
   themeConfig: {
     colorMode: {
-      defaultMode: 'light', // 'dark'
+      defaultMode: 'dark', // 'dark'
     },
-    image: 'img/logo.png',
+    image: 'tangible-logo/logo.png',
     navbar: {
       title,
       logo: {
         alt: 'Logo',
-        src: 'img/logo.svg',
+        src: 'tangible-logo/logo.svg',
         width: 24,
       },
       items: [
@@ -107,8 +111,11 @@ const config: Config = {
 
         {
           href: 'https://github.com/tangibleinc/design',
-          label: 'GitHub',
+          // label: 'GitHub',
           position: 'right',
+          className: "header--github-link",
+          "aria-label": "GitHub repository",
+          title: 'GitHub repository'
         },
       ],
     },
@@ -158,8 +165,16 @@ const config: Config = {
       copyright: `Copyright © ${new Date().getFullYear()} Tangible, Inc.`,
     },
     prism: {
-      theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
+
+      theme: prismThemes.oneLight,
+      darkTheme: prismThemes.nightOwl,
+
+      /**
+       * Additional languages for syntax highlight
+       * https://docusaurus.io/docs/next/markdown-features/code-blocks#supported-languages
+       * https://prismjs.com/#supported-languages
+       */
+      additionalLanguages: ['scss']
     },
   } satisfies Preset.ThemeConfig,
 };

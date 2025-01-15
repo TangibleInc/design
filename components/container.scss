@@ -1,0 +1,42 @@
+.t-design {
+  --container-1: 448px;
+  --container-2: 688px;
+  --container-3: 880px;
+  --container-4: 1136px;
+}
+
+.t-Container {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  flex-grow: 1;
+}
+
+.t-ContainerInner {
+  width: 100%;
+}
+
+/***************************************************************************************************
+ *                                                                                                 *
+ * SIZES                                                                                           *
+ *                                                                                                 *
+ ***************************************************************************************************/
+
+// @breakpoints {
+  .t-ContainerInner {
+    :where(.t-Container.t-size-1) & {
+      max-width: var(--container-1);
+    }
+    :where(.t-Container.t-size-2) & {
+      max-width: var(--container-2);
+    }
+    :where(.t-Container.t-size-3) & {
+      max-width: var(--container-3);
+    }
+    :where(.t-Container.t-size-4) & {
+      max-width: var(--container-4);
+    }
+  }
+// }

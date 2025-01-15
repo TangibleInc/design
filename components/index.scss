@@ -1,0 +1,65 @@
+@import './reset';
+@import './animations';
+@import './layout';
+
+.t-design:where([data-is-root-theme='true']) {
+  /* Create a new stacking context on the root `Theme` so layered components work out of the box */
+  position: relative;
+  z-index: 0;
+
+  /* Make sure root `Theme` background covers the viewport */
+  // min-height: 100vh;
+  // @supports (min-height: 100dvh) {
+  //   min-height: 100dvh;
+  // }
+}
+
+/* Import Skeleton before other components so that its default border-radius doesn’t have a higher specificity */
+@import './skeleton';
+
+/* Import Text before other components as it’s commonly extended */
+@import './text';
+
+@import './alert-dialog';
+@import './avatar';
+@import './badge';
+@import './blockquote';
+@import './button';
+@import './callout';
+@import './card';
+@import './checkbox-cards';
+@import './checkbox-group';
+@import './checkbox';
+@import './code';
+@import './context-menu';
+@import './data-list';
+@import './dialog';
+@import './dropdown-menu';
+@import './em';
+@import './heading';
+@import './hover-card';
+@import './icon-button';
+@import './inset';
+@import './kbd';
+@import './link';
+@import './popover';
+@import './progress';
+@import './quote';
+@import './radio-cards';
+@import './radio-group';
+@import './radio';
+@import './scroll-area';
+@import './segmented-control';
+@import './select';
+@import './separator';
+@import './slider';
+@import './spinner';
+@import './strong';
+@import './switch';
+@import './tab-nav';
+@import './table';
+@import './tabs';
+@import './text-area';
+@import './text-field';
+@import './theme-panel';
+@import './tooltip';

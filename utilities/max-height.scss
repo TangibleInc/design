@@ -1,0 +1,28 @@
+.t-max-h {
+  max-height: var(--max-height);
+}
+@media (--xs) {
+  .xs\:t-max-h {
+    max-height: var(--max-height-xs);
+  }
+}
+@media (--sm) {
+  .sm\:t-max-h {
+    max-height: var(--max-height-sm);
+  }
+}
+@media (--md) {
+  .md\:t-max-h {
+    max-height: var(--max-height-md);
+  }
+}
+@media (--lg) {
+  .lg\:t-max-h {
+    max-height: var(--max-height-lg);
+  }
+}
+@media (--xl) {
+  .xl\:t-max-h {
+    max-height: var(--max-height-xl);
+  }
+}

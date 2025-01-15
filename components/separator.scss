@@ -1,0 +1,46 @@
+.t-Separator {
+  display: block;
+  background-color: var(--accent-a6);
+}
+
+/***************************************************************************************************
+ *                                                                                                 *
+ * ORIENTATION                                                                                     *
+ *                                                                                                 *
+ ***************************************************************************************************/
+
+// @breakpoints {
+  .t-Separator {
+    &:where(.t-orientation-horizontal) {
+      width: var(--separator-size);
+      height: 1px;
+    }
+    &:where(.t-orientation-vertical) {
+      width: 1px;
+      height: var(--separator-size);
+    }
+  }
+// }
+
+/***************************************************************************************************
+ *                                                                                                 *
+ * SIZES                                                                                           *
+ *                                                                                                 *
+ ***************************************************************************************************/
+
+// @breakpoints {
+  .t-Separator {
+    &:where(.t-size-1) {
+      --separator-size: var(--space-4);
+    }
+    &:where(.t-size-2) {
+      --separator-size: var(--space-6);
+    }
+    &:where(.t-size-3) {
+      --separator-size: var(--space-9);
+    }
+    &:where(.t-size-4) {
+      --separator-size: 100%;
+    }
+  }
+// }
