@@ -109,7 +109,6 @@ const sidebars: SidebarsConfig = {
         'components/spinner',
         'components/switch',
         'components/table',
-        'components/tab-nav',
         'components/tabs',
         'components/text-area',
         'components/text-field',
