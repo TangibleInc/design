@@ -1,3 +1,4 @@
+import Link from '@docusaurus/Link'
 import { AspectRatio } from '@site/components'
 
 const demoImageProps = {
@@ -14,7 +15,6 @@ const demoImageProps = {
 export default function AspectRatioExample() {
   return (
     <>
-    <p><a href="/tokens/layout">Tokens: Aspect Ratio</a></p>
       <h4>16 / 9</h4>
       <p>
         <AspectRatio ratio={16 / 9}>

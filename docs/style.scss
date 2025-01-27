@@ -2,7 +2,7 @@
 $data-theme-prefix: '';
 
 // @use "../base.scss";
-@use "../index.scss";
+@import "../index.scss";
 
 
 .app-root {
@@ -37,6 +37,12 @@ $data-theme-prefix: '';
   // --ifm-code-font-size: 95%;
   // --ifm-blockquote-font-size: 110%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (min-width: 997px) {
+  .navbar__logo {
+    margin-right: 0.75rem;
+  }
 }
 
 .footer {

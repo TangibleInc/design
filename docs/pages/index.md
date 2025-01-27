@@ -17,7 +17,7 @@ npm install -D @tangible/design
 ### Sass
 
 ```scss
-@use "@tangible/design";
+@import "@tangible/design";
 ```
 
 ### TypeScript
@@ -44,7 +44,7 @@ Accessible by default: keyboard navigation, screen reader support.
 
 ### Modular
 
-Load only the features you use. Ideally the library core defines token collections in JSON; generates Sass variables, functions, mixins, placeholders; then produce only the CSS variables and rules as needed.
+Load only the features you use. Ideally the library core defines token collections in TypeScript, which generates JSON and Sass variables, functions, mixins, placeholders; then produce only the CSS variables and rules as needed.
 
 CSS classes and custom properties are prefixed to support embedded context such as WordPress frontend and admin.
 

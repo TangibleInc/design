@@ -20,6 +20,14 @@
 /* Import Text before other components as it’s commonly extended */
 @import './text';
 
+@import "./base-button.scss";
+@import "./base-card.scss";
+@import "./base-checkbox.scss";
+@import "./base-dialog.scss";
+@import "./base-menu.scss";
+@import "./base-radio.scss";
+@import "./base-tab-list.scss";
+
 @import './alert-dialog';
 @import './avatar';
 @import './badge';

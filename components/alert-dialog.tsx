@@ -52,7 +52,7 @@ const AlertDialogContent = React.forwardRef<AlertDialogContentElement, AlertDial
           <AlertDialogPrimitive.Overlay className="t-BaseDialogOverlay t-AlertDialogOverlay">
             <div className="t-BaseDialogScroll t-AlertDialogScroll">
               <div
-                className={`rt-BaseDialogScrollPadding t-AlertDialogScrollPadding ${alignClassName}`}
+                className={`t-BaseDialogScrollPadding t-AlertDialogScrollPadding ${alignClassName}`}
               >
                 <AlertDialogPrimitive.Content
                   {...contentProps}

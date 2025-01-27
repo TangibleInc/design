@@ -45,7 +45,7 @@ export default function ColorsAccents() {
                 }
                 className="t-Box t-h t-mb-1"
               ></div>
-              <div className="t-Text t-size-2">{accent}</div>
+              <div className="t-Text t-size-2 t-ta-center">{accent}</div>
             </div>
           ))}
         </div>
