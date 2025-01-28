@@ -12,13 +12,13 @@ const tailwindColorGroupMap = tailwindColors.groups.reduce((obj, group) => {
 
 // console.log(tailwindColorGroupMap)
 
-console.log(
-  tailwindColors.groups
-    .map(
-      (g) => `## ${g.name}\n\n<ColorsTailwind type="${g.name.toLowerCase()}" />\n`
-    )
-    .join('\n')
-)
+// console.log(
+//   tailwindColors.groups
+//     .map(
+//       (g) => `## ${g.name}\n\n<ColorsTailwind type="${g.name.toLowerCase()}" />\n`
+//     )
+//     .join('\n')
+// )
 
 export function ColorsTailwind(props) {
   const { type } = props

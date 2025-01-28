@@ -53,7 +53,7 @@ CSS classes and custom properties are prefixed to support embedded context such 
 
 ### Portable
 
-Embrace the [Design Tokens standard format](http`s://tr.designtokens.org/format/) (JSON) being developed by the W3C Community Group. This way shared values can be created and used across platforms, languages, and design tools.
+Embrace the [Design Tokens standard format](https://tr.designtokens.org/format/) (JSON) being developed by the W3C Community Group. This way shared values can be created and used across platforms, languages, and design tools.
 
 - Design token parsers and compilers: [Style Dictionary](https://amzn.github.io/style-dictionary), [Diez](https://diez.org/)
 - [Standardized Design Tokens and CSS for a consistent, customizable, and interoperable WordPress future](https://mrwweb.com/standardized-design-tokens-css-wordpress-future/)

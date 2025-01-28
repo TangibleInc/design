@@ -16,17 +16,19 @@
 
   .t-lt-start::before,
   .t-lt-both::before {
-    margin-bottom: calc(
+    margin-bottom:
+    // calc(
       var(--leading-trim-start, var(--default-leading-trim-start)) -
         var(--line-height, calc(1em * var(--default-line-height))) / 2
-    );
+    // );
   }
 
   .t-lt-end::after,
   .t-lt-both::after {
-    margin-top: calc(
+    margin-top:
+    // calc(
       var(--leading-trim-end, var(--default-leading-trim-end)) -
         var(--line-height, calc(1em * var(--default-line-height))) / 2
-    );
+    // );
   }
 // }

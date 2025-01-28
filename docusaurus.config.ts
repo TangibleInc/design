@@ -35,7 +35,15 @@ const config: Config = {
   // },
 
   plugins: [
-    'docusaurus-plugin-sass',
+    // 'docusaurus-plugin-sass',
+    ['docusaurus-plugin-sass', {
+      sassOptions: {
+        // https://sass-lang.com/documentation/js-api/interfaces/deprecations/
+        silenceDeprecations: [
+          'import'
+        ]
+      }
+    }],
     'docusaurus-lunr-search',
   ],
   markdown: {
