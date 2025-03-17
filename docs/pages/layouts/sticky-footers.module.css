@@ -1,0 +1,61 @@
+
+/* With grid */
+
+.wrapperWithGrid {
+  box-sizing: border-box;
+  height: 16rem;
+  min-height: 100%;
+  margin-bottom: 1rem;;
+
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+
+  border: 1px solid grey;
+}
+
+.wrapperWithGrid .pageHeader,
+.wrapperWithGrid .pageFooter {
+  background-color: rgb(75 70 74);
+  color: #fff;
+  padding: 1rem;
+}
+
+.wrapperWithGrid .pageBody {
+  padding: 1rem;
+}
+
+.wrapperWithGrid .pageBody p {
+}
+
+/* With flexbox */
+
+.wrapperWithFlexbox {
+  box-sizing: border-box;
+  height: 16rem;
+  min-height: 100%;
+  margin-bottom: 1rem;;
+
+  display: flex;
+  flex-direction: column;
+
+  border: 1px solid grey;
+}
+
+.wrapperWithFlexbox .pageHeader,
+.wrapperWithFlexbox .pageFooter {
+  background-color: rgb(75 70 74);
+  color: #fff;
+  padding: 1rem;
+
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.wrapperWithFlexbox .pageBody {
+  padding: 1rem;
+
+  flex-grow: 1;
+}
+
+.wrapperWithFlexbox .pageBody p {
+}

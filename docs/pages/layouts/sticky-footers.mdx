@@ -1,0 +1,35 @@
+import styles from './sticky-footers.module.css'
+
+# Sticky footers
+
+Creating a footer which sits at the bottom of the container or viewport when the content is shorter.
+
+## Grid
+
+<div className={styles.wrapperWithGrid}>
+  <header className={styles.pageHeader}>This is the header</header>
+  <main className={styles.pageBody}>
+    <p>The footer sticks to the bottom even though this paragraph is short. Add
+      content to this editable area to see the footer push down when needed to
+      fit the content.</p>
+  </main>
+  <footer className={styles.pageFooter}>Sticky footer</footer>
+</div>
+
+## Flexbox
+
+<div className={styles.wrapperWithFlexbox}>
+  <header className={styles.pageHeader}>This is the header</header>
+  <main className={styles.pageBody}>
+    <p>The footer sticks to the bottom even though this paragraph is short. Add
+      content to this editable area to see the footer push down when needed to
+      fit the content.</p>
+  </main>
+  <footer className={styles.pageFooter}>Sticky footer</footer>
+</div>
+
+
+#### References
+
+- https://developer.mozilla.org/en-US/docs/Web/CSS/Layout_cookbook/Sticky_footers
+

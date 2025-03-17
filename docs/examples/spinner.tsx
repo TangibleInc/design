@@ -9,7 +9,7 @@ export default function SpinnerExample() {
         <Spinner size="3" />
       </Flex>
       <Box my="4">
-        <Button loading>Bookmark</Button>
+        <Button>Bookmark</Button>
       </Box>
     </>
   )

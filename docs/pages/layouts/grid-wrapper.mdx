@@ -1,0 +1,30 @@
+import styles from './grid-wrapper.module.css'
+
+# Grid wrapper
+
+Align grid content within a central wrapper, while also allowing items to break out
+
+<div className={styles.grid}>
+  <div className={styles.wrapper}>
+    <p>
+      This item aligns to a central “wrapper” – columns that have a maximum
+      width.
+    </p>
+  </div>
+  <div className={styles.fullWidth}>
+    <p>This item aligns to the edge of the grid container.</p>
+  </div>
+  <div className={styles.leftEdge}>
+    <p>
+      This item aligns to the left edge of the grid container and the right edge
+      of the wrapper.
+    </p>
+  </div>
+  <div className={styles.rightWrapper}>
+    <p>This item aligns to the right edge of the “wrapper” columns.</p>
+  </div>
+</div>
+
+#### References
+
+- https://developer.mozilla.org/en-US/docs/Web/CSS/Layout_cookbook/Grid_wrapper

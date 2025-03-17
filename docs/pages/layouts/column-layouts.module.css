@@ -1,0 +1,71 @@
+
+/* Multicolumn layout */
+
+.multiColumnLayout {
+  border: 2px solid rgb(75 70 74);
+  border-radius: 0.5em;
+  padding: 20px;
+
+  column-width: 10em;
+  column-rule: 1px solid rgb(75 70 74);
+}
+
+/* Flexbox layout */
+
+.flexboxLayout {
+  border: 2px solid rgb(75 70 74);
+  border-radius: 0.5em;
+  padding: 20px 10px;
+
+  display: flex;
+}
+
+.flexboxLayout > * {
+  padding: 10px;
+  border: 2px solid rgb(95 97 110);
+  border-radius: 0.5em;
+
+  margin: 0 10px;
+  flex: 1;
+}
+
+/* Flex wrap layout */
+
+.flexwrapLayout {
+  border: 2px solid rgb(75 70 74);
+  border-radius: 0.5em;
+  padding: 20px 10px;
+  width: 500px;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flexwrapLayout > * {
+  padding: 10px;
+  border: 2px solid rgb(95 97 110);
+  border-radius: 0.5em;
+
+  margin: 0 10px;
+  flex: 1 1 200px;
+}
+
+/* Grid layout */
+
+.gridLayout {
+  border: 2px solid rgb(75 70 74);
+  border-radius: 0.5em;
+  padding: 20px;
+  width: 500px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.gridLayout > * {
+  padding: 10px;
+  border: 2px solid rgb(95 97 110);
+  border-radius: 0.5em;
+  margin: 0;
+}

@@ -1,40 +1,40 @@
 
 // Tokens
 
-@import './colors/gray-theme';
-@import './colors/mauve-theme';
-@import './colors/slate-theme';
-@import './colors/sage-theme';
-@import './colors/olive-theme';
-@import './colors/sand-theme';
+@import './colors/radix-v3/gray-theme';
+@import './colors/radix-v3/mauve-theme';
+@import './colors/radix-v3/slate-theme';
+@import './colors/radix-v3/sage-theme';
+@import './colors/radix-v3/olive-theme';
+@import './colors/radix-v3/sand-theme';
 
-@import './colors/amber-theme';
-@import './colors/blue-theme';
-@import './colors/bronze-theme';
-@import './colors/brown-theme';
-@import './colors/crimson-theme';
-@import './colors/cyan-theme';
-@import './colors/gold-theme';
-@import './colors/grass-theme';
-@import './colors/green-theme';
-@import './colors/indigo-theme';
-@import './colors/iris-theme';
-@import './colors/jade-theme';
-@import './colors/lime-theme';
-@import './colors/mint-theme';
-@import './colors/orange-theme';
-@import './colors/pink-theme';
-@import './colors/plum-theme';
-@import './colors/purple-theme';
-@import './colors/red-theme';
-@import './colors/ruby-theme';
-@import './colors/sky-theme';
-@import './colors/teal-theme';
-@import './colors/tomato-theme';
-@import './colors/violet-theme';
-@import './colors/yellow-theme';
+@import './colors/radix-v3/amber-theme';
+@import './colors/radix-v3/blue-theme';
+@import './colors/radix-v3/bronze-theme';
+@import './colors/radix-v3/brown-theme';
+@import './colors/radix-v3/crimson-theme';
+@import './colors/radix-v3/cyan-theme';
+@import './colors/radix-v3/gold-theme';
+@import './colors/radix-v3/grass-theme';
+@import './colors/radix-v3/green-theme';
+@import './colors/radix-v3/indigo-theme';
+@import './colors/radix-v3/iris-theme';
+@import './colors/radix-v3/jade-theme';
+@import './colors/radix-v3/lime-theme';
+@import './colors/radix-v3/mint-theme';
+@import './colors/radix-v3/orange-theme';
+@import './colors/radix-v3/pink-theme';
+@import './colors/radix-v3/plum-theme';
+@import './colors/radix-v3/purple-theme';
+@import './colors/radix-v3/red-theme';
+@import './colors/radix-v3/ruby-theme';
+@import './colors/radix-v3/sky-theme';
+@import './colors/radix-v3/teal-theme';
+@import './colors/radix-v3/tomato-theme';
+@import './colors/radix-v3/violet-theme';
+@import './colors/radix-v3/yellow-theme';
 
-// Base
+// // Base
 @import './screen';
 @import './color';
 @import './cursor';
@@ -45,7 +45,7 @@
 @import './width';
 @import './typography';
 
-// Components from Radix UI Themes
+// // Components from Radix UI Themes
 @import './components/index';
 
 // From Shadcn

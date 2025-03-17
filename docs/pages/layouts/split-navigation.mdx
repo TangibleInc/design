@@ -1,0 +1,19 @@
+import styles from './split-navigation.module.css'
+
+# Split navigation
+
+A navigation pattern where some links are visually separated from the others.
+
+<nav className={styles.nav}>
+  <ul className={styles.mainNav}>
+    <li><a href="">About</a></li>
+    <li><a href="">Products</a></li>
+    <li><a href="">Our Team</a></li>
+    <li className={styles.push}><a href="">Contact</a></li>
+  </ul>
+</nav>
+
+
+#### References
+
+- https://developer.mozilla.org/en-US/docs/Web/CSS/Layout_cookbook/Split_Navigation

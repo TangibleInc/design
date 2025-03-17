@@ -1,8 +1,12 @@
-# Design
+# Design Library
 
-The Design library includes themeable user interface components, design tokens, and styling utilities. It is written in Sass and TypeScript with React.
+The Design Library includes themeable user interface components, design tokens, and styling utilities. It is written in Sass and TypeScript with React.
 
-**Status: Draft**
+Website: https://design.tangible.one
+
+Repository: https://github.com/tangibleinc/design
+
+**Status: Draft** - Currently in research phase
 
 ## Getting started
 

@@ -2,7 +2,7 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import {themes as prismThemes} from 'prism-react-renderer';
 
-const title = 'Tangible Design'
+const title = 'Design Library'
 
 // https://docusaurus.io/docs/next/api/themes/configuration
 const config: Config = {

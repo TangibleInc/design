@@ -1,0 +1,163 @@
+import styles from './media-objects.module.css'
+
+# Media objects
+
+A two-column box with an image on one side and descriptive text on the other, e.g. a facebook post or tweet.
+
+<div className={styles.media}>
+  <div className={styles.img}>
+    <img
+      src="/demo/monet-woman-with-a-parasol-1.jpg"
+      alt="Balloons" />
+  </div>
+  <div className={styles.content}>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vehicula
+      vitae ligula sit amet maximus. Nunc auctor neque ipsum, ac porttitor elit
+      lobortis ac. Vivamus ultrices sodales tellus et aliquam. Pellentesque
+      porta sit amet nulla vitae luctus. Praesent quis risus id dolor venenatis
+      condimentum.
+    </p>
+  </div>
+  <div className={styles.footer}>An optional footer goes here.</div>
+</div>
+
+<div className={styles.media}>
+  <div className={styles.img}>
+    <img
+      src="/demo/profile.png"
+      width="80px"
+      alt="Account" />
+  </div>
+  <div className={styles.content}>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vehicula
+      vitae ligula sit amet maximus. Nunc auctor neque ipsum, ac porttitor elit
+      lobortis ac. Vivamus ultrices sodales tellus et aliquam. Pellentesque
+      porta sit amet nulla vitae luctus. Praesent quis risus id dolor venenatis
+      condimentum.
+    </p>
+  </div>
+  <div className={styles.footer}></div>
+</div>
+
+## Alternative layouts
+
+<div className={styles.mediaAlt}>
+
+  <div className={styles.img}>
+    <img src="/demo/vogh-1.jpg" alt="Placeholder" />
+  </div>
+  <h2 className={styles.title}>This is my title</h2>
+  <div className={styles.content}>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vehicula vitae ligula sit amet maximus. Nunc auctor neque ipsum, ac porttitor elit lobortis ac. Vivamus ultrices sodales tellus et aliquam. Pellentesque porta sit amet nulla vitae luctus.
+      Praesent quis risus id dolor venenatis condimentum.</p>
+  </div>
+  <div className={styles.footer}>
+    An optional footer goes here.
+  </div>
+</div>
+
+<div className={styles.mediaAlt + ' ' + styles.mediaFlip}>
+
+  <div className={styles.img}>
+    <img src="/demo/vogh-2.jpg" alt="Placeholder" />
+  </div>
+  <h2 className={styles.title}>This is my title</h2>
+  <div className={styles.content}>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vehicula vitae ligula sit amet maximus. Nunc auctor neque ipsum, ac porttitor elit lobortis ac. Vivamus ultrices sodales tellus et aliquam. Pellentesque porta sit amet nulla vitae luctus.
+      Praesent quis risus id dolor venenatis condimentum.</p>
+  </div>
+  <div className={styles.footer}>
+    An optional footer goes here.
+  </div>
+</div>
+
+<div className={styles.mediaAlt}>
+  <h2 className={styles.title}>This is my title</h2>
+
+  <div className={styles.img}>
+    <img src="/demo/vogh-3.jpg" alt="Placeholder" />
+  </div>
+
+  <div className={styles.content}>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vehicula vitae ligula sit amet maximus. Nunc auctor neque ipsum, ac porttitor elit lobortis ac. Vivamus ultrices sodales tellus et aliquam. Pellentesque porta sit amet nulla vitae luctus.
+      Praesent quis risus id dolor venenatis condimentum.</p>
+  </div>
+
+  <div className={styles.footer}>
+    footer here
+  </div>
+
+  <div className={styles.mediaAlt}>
+    <h2 className={styles.title}>This is my title</h2>
+
+    <div className={styles.img}>
+      <img src="/demo/vogh-4.jpg" alt="Placeholder" />
+    </div>
+
+    <div className={styles.content}>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vehicula vitae ligula sit amet maximus. Nunc auctor neque ipsum, ac porttitor elit lobortis ac. Vivamus ultrices sodales tellus et aliquam. Pellentesque porta sit amet nulla vitae luctus.
+        Praesent quis risus id dolor venenatis condimentum.</p>
+    </div>
+
+    <div className={styles.footer}>
+      footer here
+    </div>
+
+    <div className={styles.mediaAlt}>
+      <h2 className={styles.title}>This is my title</h2>
+
+      <div className={styles.img}>
+        <img src="/demo/vogh-5.jpg" alt="Placeholder" />
+      </div>
+
+      <div className={styles.content}>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vehicula vitae ligula sit amet maximus. Nunc auctor neque ipsum, ac porttitor elit lobortis ac. Vivamus ultrices sodales tellus et aliquam. Pellentesque porta sit amet nulla vitae luctus.
+          Praesent quis risus id dolor venenatis condimentum.</p>
+      </div>
+
+      <div className={styles.footer}>
+        footer here
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div className={styles.mediaAlt + ' ' + styles.imgFlexie}>
+
+  <div className={styles.img}>
+    <img src="/demo/vogh-6.jpg" alt="Placeholder" />
+  </div>
+  <h2 className={styles.title}>Both my columns flex</h2>
+  <div className={styles.content}>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vehicula vitae ligula sit amet maximus. Nunc auctor neque ipsum, ac porttitor elit lobortis ac. Vivamus ultrices sodales tellus et aliquam. Pellentesque porta sit amet nulla vitae luctus. Praesent quis risus id dolor venenatis condimentum.</p>
+  </div>
+  <div className={styles.footer}>
+    An optional footer goes here.
+  </div>
+</div>
+
+<div className={styles.mediaAlt + ' ' + styles.mediaFlip + ' ' + styles.imgFlexie}>
+
+  <div className={styles.img}>
+    <img src="/demo/vogh-7.jpg" alt="Placeholder" />
+  </div>
+  <h2 className={styles.title}>Both my columns flex</h2>
+  <div className={styles.content}>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vehicula vitae ligula sit amet maximus. Nunc auctor neque ipsum, ac porttitor elit lobortis ac. Vivamus ultrices sodales tellus et aliquam. Pellentesque porta sit amet nulla vitae luctus. Praesent quis risus id dolor venenatis condimentum.</p>
+  </div>
+  <div className={styles.footer}>
+    An optional footer goes here.
+  </div>
+</div>
+
+#### References
+
+- https://developer.mozilla.org/en-US/docs/Web/CSS/Layout_cookbook/Media_objects

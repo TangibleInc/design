@@ -2,7 +2,8 @@ import {
   isBrightBackground,
   hexToRgb,
 } from '@site/helpers/is-bright-background'
-import tailwindColors from '@site/color-sets/tailwind-v3.json'
+import tailwindColors from '@site/colors/tailwind-v3.json'
+import styles from './color-book.module.css'
 
 const tailwindColorGroupMap = tailwindColors.groups.reduce((obj, group) => {
   const name = group.name.toLowerCase()
@@ -25,12 +26,13 @@ export function ColorsTailwind(props) {
   const group = tailwindColorGroupMap[type]
   if (!group) return <>Group not found: {type}</>
   return (
-    <div className="t-design t-Box t-mt-5 t-mb-8">
-      <div className="t-Flex t-fd-column t-gap-5">
-        <div className="t-Grid t-gtc-4 xs:t-gtc-6 sm:t-gtc-9 t-cg-1 t-rg-3">
+    <div className={styles.container}>
+      <div className={styles.flex}>
+        <div className={styles.grid}>
           {group.colors.map((color) => (
-            <div className="t-Box t-fg-1">
+            <div key={color.name} className={styles.item}>
               <div
+                className={styles.itemColor}
                 style={
                   {
                     '--height': '48px',
@@ -39,10 +41,9 @@ export function ColorsTailwind(props) {
                     // "--height: 48px; background-color: var(--gray-9); border-radius: var(--radius-1);"
                   } as React.CSSProperties
                 }
-                className="t-Box t-h t-mb-1"
               ></div>
-              <div className="t-Text t-size-2 t-ta-center">{color.name}</div>
-            </div>
+              <div className={styles.itemLabel}>{color.name}</div>
+              </div>
           ))}
         </div>
       </div>

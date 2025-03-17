@@ -1,0 +1,48 @@
+import styles from './pagination.module.css'
+
+# Pagination
+
+Links to pages of content such as search results.
+
+<nav className={styles.nav} aria-label="pagination">
+  <ul className={styles.pagination}>
+    <li>
+      <a href="#">
+        <span aria-hidden="true">&laquo;</span>
+        <span className={styles.visuallyhidden}>previous set of pages</span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <span className={styles.visuallyhidden}>page </span>1
+      </a>
+    </li>
+    <li>
+      <a href="#" aria-current="page">
+        <span className={styles.visuallyhidden}>page </span>2
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        {' '}
+        <span className={styles.visuallyhidden}>page </span>3{' '}
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        {' '}
+        <span className={styles.visuallyhidden}>page </span>4{' '}
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <span className={styles.visuallyhidden}>next set of pages</span>
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+#### References
+
+- https://developer.mozilla.org/en-US/docs/Web/CSS/Layout_cookbook/Pagination

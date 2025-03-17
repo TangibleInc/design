@@ -1,0 +1,29 @@
+import styles from './breadcrumb.module.css'
+
+# Breadcrumb
+
+A two-column box with an image on one side and descriptive text on the other, e.g. a facebook post or tweet.
+
+<nav aria-label="Breadcrumb" className={styles.breadcrumb}>
+  <ol>
+    <li>
+      <a href="#">Home</a>
+    </li>
+    <li>
+      <a href="#">Category</a>
+    </li>
+    <li>
+      <a href="#">Sub Category</a>
+    </li>
+    <li>
+      <a href="#">Type</a>
+    </li>
+    <li>
+      <span aria-current="page">Product</span>
+    </li>
+  </ol>
+</nav>
+
+#### References
+
+- https://developer.mozilla.org/en-US/docs/Web/CSS/Layout_cookbook/Breadcrumb_Navigation

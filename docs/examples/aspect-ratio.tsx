@@ -14,25 +14,25 @@ const demoImageProps = {
 
 export default function AspectRatioExample() {
   return (
-    <>
+    <div>
       <h4>16 / 9</h4>
-      <p>
+      <p style={{ maxWidth: '720px' }}>
         <AspectRatio ratio={16 / 9}>
           <img {...demoImageProps} src='/demo/vogh-3.jpg' />
         </AspectRatio>
       </p>
       <h4>4 / 3</h4>
-      <p>
+      <p style={{ maxWidth: '620px' }}>
         <AspectRatio ratio={4 / 3}>
           <img {...demoImageProps} src='/demo/vogh-4.jpg' />
         </AspectRatio>
       </p>
       <h4>1 / 1</h4>
-      <p>
+      <p style={{ maxWidth: '520px' }}>
         <AspectRatio ratio={1}>
           <img {...demoImageProps} src='/demo/vogh-2.jpg' />
         </AspectRatio>
       </p>
-    </>
+    </div>
   )
 }
